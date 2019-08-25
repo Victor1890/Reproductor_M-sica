@@ -20,6 +20,8 @@ namespace NAudio_Spotify_Local
         //Variables
         private bool _playing = false;
 
+
+        
         /// <summary>
         /// Esto es para poner la Imagen de la Música
         /// </summary>

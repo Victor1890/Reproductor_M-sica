@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +20,22 @@ namespace NAudio_Spotify_Local
         {
             InitializeComponent();
         }
-        Classes.Music Music = new Classes.Music();
-        
+        private Classes.AudioPlayer Music = new Classes.AudioPlayer();
+        private Play_Items items = new Play_Items();
+
 
         //Variables
-        private string[] _rutasM;
+        private static Random rnd = new Random();
+        private IWavePlayer _waveOutDevice;
+        private AudioFileReader _audioFileReader;
+        private List<string> _songFiles = new List<string>();
+        private int _songIndex;
+        private Action<float> _setVolumeDelegate;
+        private string _lastPath;
+        private const string _supportedExtentions = "*.wav;*.aiff;*.mp3;*.aac";
 
 
-
-
+        //Cosas
         private void btExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -62,7 +71,7 @@ namespace NAudio_Spotify_Local
         public void play_Items1_onAction(object sender, EventArgs e)
         {
             //Cambiar el botón del Play a Pause
-            play_Items1.isPlaying = false;
+            //play_Items1.isPlaying = false;
             //play_Items2.isPlaying = false;
             //play_Items3.isPlaying = false;
 
@@ -103,47 +112,368 @@ namespace NAudio_Spotify_Local
                 btPlay.Image = Properties.Resources.Play;
                 Pic_effects.Visible = false;
             }
+
+            if (!_songFiles.Any())
+            {
+                btLocal_Click(sender, e);
+                return;
+            }
+
+            btPlay.Text = ";";
+
+            if (_waveOutDevice != null)
+            {
+                if (_waveOutDevice.PlaybackState == PlaybackState.Playing)
+                {
+                    _waveOutDevice.Pause();
+                    btPlay.Text = "4";
+                    return;
+                }
+                else if (_waveOutDevice.PlaybackState == PlaybackState.Paused)
+                {
+                    _waveOutDevice.Play();
+                    btPlay.Text = ";";
+                    return;
+                }
+
+                _songIndex = ListSong.SelectedIndex;
+
+                PlaySong(_songIndex);
+
+            }
         }
+        //Cosas
+
+        private void PlaySong(int songIndex)
+        {
+            //Create Wave
+            _waveOutDevice = new WaveOut();
+            ISampleProvider sampleProvider;
+
+            try
+            {
+                sampleProvider = CreateInputStream(_songFiles.ElementAt(songIndex));
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                sampleProvider = CreateInputStream(_songFiles.First());
+                ListSong.SelectedIndex = 0;
+            }
+
+            //Length of the song
+            l_time_final.Text = string.Format("{0:00}:{1:00}", (int)_audioFileReader.TotalTime.TotalMinutes, _audioFileReader.TotalTime.Seconds);
+
+            //Set name and description
+            string path;
+
+            try
+            {
+                path = _songFiles.ElementAt(songIndex);
+            }
+            catch (Exception)
+            {
+                path = _songFiles.First();
+            }
+
+            TagLib.File file = TagLib.File.Create(path);
+
+            l_Artist_1.Text = file.Tag.FirstAlbumArtist;
+            l_Artist_2.Text = file.Tag.FirstAlbumArtist;
+            l_Song_1.Text = file.Tag.Title;
+            l_Album.Text = file.Tag.FirstAlbumArtist;
+
+            //Set artwork
+            TagLib.IPicture pic;
+            MemoryStream stream;
+            Bitmap image;
+
+            if (file.Tag.Pictures.Length > 0)
+            {
+                pic = file.Tag.Pictures[0];
+
+                stream = new MemoryStream(pic.Data.Data);
+                image = new Bitmap(stream);
+                //new Bitmap(stream);
+
+                thumbnail.Image = image;
+                thumbnail2.Image = image;
+            }
+            else
+            {
+                thumbnail.Image = Properties.Resources.default_1;
+                thumbnail2.Image = Properties.Resources.default_1;
+            }
+
+            //Play song :P
+            _waveOutDevice.Init(sampleProvider);
+            _setVolumeDelegate(bunifuSlider2.Value);
+            _waveOutDevice.Play();
+        }
+
+        private ISampleProvider CreateInputStream(string fileName)
+        {
+            try
+            {
+                _audioFileReader = new AudioFileReader(fileName);
+            }
+            catch (FileNotFoundException ex)
+            {
+                _audioFileReader = new AudioFileReader(_songFiles.First());
+            }
+
+            var sampleChannel = new SampleChannel(_audioFileReader, true);
+            _setVolumeDelegate = vol => sampleChannel.Volume = vol;
+            var postVolumeMeter = new MeteringSampleProvider(sampleChannel);
+
+            return postVolumeMeter;
+        }
+
+        private void AddSongsToLists(string song)
+        {
+            string name;
+            TagLib.File file;
+
+            file = TagLib.File.Create(song);
+
+            try
+            {
+                name = string.Format("{0} - {1}", file.Tag.Performers[0], file.Tag.Title);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                name = Path.GetFileNameWithoutExtension(song);
+            }
+
+            _songFiles.Add(song);
+
+            ListSong.Items.Add(name);
+        }
+
 
         private void btLocal_Click(object sender, EventArgs e)
         {
-            Music.ForderDirectory();
-            //FolderBrowserDialog folder = new FolderBrowserDialog();
-            //if (folder.ShowDialog() == DialogResult.OK)
-            //{
-            //    _rutasM = Directory.GetFiles(folder.SelectedPath,"*.mp3");
-            //}
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            folderBrowser.ShowNewFolderButton = false;
 
-            if (_rutasM == null)
+            try
             {
-                vScrollBar1.Visible = true;
-                for (int i = 0; i < 1; i++)
+                folderBrowser.SelectedPath = _lastPath;
+            }
+            catch (ArgumentNullException ex)
+            {
+                folderBrowser.RootFolder = Environment.SpecialFolder.MyComputer;
+            }
+
+            if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
+            {
+                string extensions = "*.mp3";
+                var paths = Directory.GetFiles(folderBrowser.SelectedPath, extensions, SearchOption.AllDirectories);
+
+                foreach (string path in paths)
                 {
-                    var items = new Play_Items();
-                    items.Dock = DockStyle.Top;
-                    items.Tag += "none";
-                    items.onAction += play_Items1_onAction;
-                    panel5.Controls.Add(items);
+                    if (!_songFiles.Contains(path))
+                    {
+                        AddSongsToLists(path);
+                    }
                 }
             }
         }
 
-        private void alert(string mng)
+
+        //
+        private void ListSong_DoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(mng);
+            if (Pic_effects.Visible == false)
+            {
+                btPlay.Image = Properties.Resources.Pause;
+                Pic_effects.Visible = true;
+            }
+            else
+            {
+                btPlay.Image = Properties.Resources.Play;
+                Pic_effects.Visible = false;
+            }
+
+            int index = ListSong.IndexFromPoint(e.Location);
+            _songIndex = ListSong.SelectedIndex;
+
+            if (index != ListBox.NoMatches)
+            {
+                //lblTitle.Text = ListSong.SelectedItem.ToString();
+
+                if (_waveOutDevice == null)
+                {
+                    PlaySong(_songIndex);
+                }
+                else if (_waveOutDevice != null)
+                {
+                    _waveOutDevice.Stop();
+                    PlaySong(_songIndex);
+                }
+
+                btPlay.Text = ";";
+            }
+        }
+
+        private void btStop_Click(object sender, EventArgs e)
+        {
+            if (_waveOutDevice != null)
+            {
+                btPlay.Text = "4";
+                ClearAll();
+                ListSong.SelectedIndex = -1;
+            }
+        }
+
+        private void btRight_Click(object sender, EventArgs e)
+        {
+            PrevNextSong('+');
+        }
+
+        private void btLeft_Click(object sender, EventArgs e)
+        {
+            PrevNextSong('-');
+        }
+
+        private void PrevNextSong(char sym)
+        {
+            if (_waveOutDevice == null)
+            {
+                return;
+            }
+
+            _waveOutDevice.Stop();
+            
+
+            //Shuffle
+            //if (chkShuffle.Checked)
+            //{
+            //    int rndIndex = rnd.Next(0, ListSong.Items.Count);
+
+            //    if (rndIndex == ListSong.SelectedIndex)
+            //    {
+            //        rndIndex = rnd.Next(0, ListSong.Items.Count);
+            //    }
+
+            //    ListSong.SelectedIndex = rndIndex;
+            //    PlaySong(rndIndex);
+
+            //    return;
+            //}
+
+            //Change songs
+            int songIndex;
+
+            if (sym == '+')
+            {
+                songIndex = ListSong.SelectedIndex + 1;
+            }
+            else if (sym == '-')
+            {
+                songIndex = ListSong.SelectedIndex - 1;
+            }
+            else return;
+
+            try
+            {
+                ListSong.SelectedIndex = songIndex;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                if (sym == '+')
+                {
+
+                    PlaySong(_songFiles.IndexOf("0"));
+                    ListSong.SelectedIndex = 0;
+                }
+                else if (sym == '-')
+                {
+                    MessageBox.Show("Test");
+                    PlaySong(_songFiles.Count - 1);
+                    ListSong.SelectedIndex = ListSong.Items.Count - 1;
+                }
+                return;
+            }
+            PlaySong(songIndex);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (_waveOutDevice != null && _audioFileReader != null)
+            {
+                TimeSpan currentTime = (_waveOutDevice.PlaybackState == PlaybackState.Stopped) ? TimeSpan.Zero : _audioFileReader.CurrentTime;
+                bunifuSlider1.Value = Math.Min(bunifuSlider1.MaximumValue, (int)(100 * currentTime.TotalSeconds / _audioFileReader.TotalTime.TotalSeconds));
+                l_time_inial.Text = string.Format("{0:00}:{1:00}", (int)currentTime.TotalMinutes, currentTime.Seconds);
+            }
+            else
+            {
+                bunifuSlider1.Value = 0;
+            }
+        }
+
+        private void bunifuSlider1_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (_audioFileReader != null)
+            {
+                _audioFileReader.CurrentTime = TimeSpan.FromSeconds(_audioFileReader.TotalTime.TotalSeconds * bunifuSlider1.Value / 100.0);
+            }
+        }
+
+        private void CloseWaveOut()
+        {
+            if (_waveOutDevice != null)
+            {
+                _waveOutDevice.Stop();
+            }
+            if (_waveOutDevice != null)
+            {
+                _waveOutDevice.Dispose();
+                _waveOutDevice = null;
+            }
+        }
+
+        private void ClearAll()
+        {
+            //
+        }
+
+        private void bunifuSlider2_ValueChanged(object sender, EventArgs e)
+        {
+            if (_setVolumeDelegate != null)
+            {
+                _setVolumeDelegate(bunifuSlider2.Value);
+            }
+        }
+
+        private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
+        {
+            if (bunifuSlider1.Value == bunifuSlider1.MaximumValue)
+            {
+                PrevNextSong('+');
+            }
         }
 
         private void btMute_Hight_Click(object sender, EventArgs e)
         {
+            if (_setVolumeDelegate != null)
+            {
+                _setVolumeDelegate(bunifuSlider2.Value);
+            }
+            
+
             if (bunifuSlider2.Value < 0)
             {
                 btMute_Hight.Image = Properties.Resources.mute;
             }
             else if (bunifuSlider2.Value > 1 || bunifuSlider2.Value < 79)
             {
-                //btMute_Hight.Image = Properties.Resources
+                btMute_Hight.Image = Properties.Resources.Medium_Volume;
             }
-
+            else if (bunifuSlider2.Value > 80)
+            {
+                btMute_Hight.Image = Properties.Resources.High_Volume;
+            }
         }
     }
 }

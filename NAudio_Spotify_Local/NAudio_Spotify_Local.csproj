@@ -59,8 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Datos.cs" />
-    <Compile Include="Classes\Music.cs" />
+    <Compile Include="Classes\AudioPlayer.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,13 +169,16 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\default.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\default_1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ricardo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\High_Volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medium_Volume.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

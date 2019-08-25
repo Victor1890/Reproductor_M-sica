@@ -113,6 +113,16 @@ namespace NAudio_Spotify_Local.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap High_Volume {
+            get {
+                object obj = ResourceManager.GetObject("High_Volume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap instagram_96px {
             get {
                 object obj = ResourceManager.GetObject("instagram_96px", resourceCulture);
@@ -136,6 +146,16 @@ namespace NAudio_Spotify_Local.Properties {
         internal static System.Drawing.Bitmap Maximize_96px {
             get {
                 object obj = ResourceManager.GetObject("Maximize_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Medium_Volume {
+            get {
+                object obj = ResourceManager.GetObject("Medium_Volume", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
