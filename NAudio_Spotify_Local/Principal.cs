@@ -41,18 +41,6 @@ namespace NAudio_Spotify_Local
             Application.Exit();
         }
 
-        private void btMax_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
         private void btMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -65,7 +53,7 @@ namespace NAudio_Spotify_Local
 
         private void btGitHub_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Victor1890");
+            System.Diagnostics.Process.Start("https://github.com/Victor1890/Reproductor_M-sica");
         }
 
         public void play_Items1_onAction(object sender, EventArgs e)
@@ -97,6 +85,35 @@ namespace NAudio_Spotify_Local
             {
                 btPlay.Image = Properties.Resources.Play;
                 Pic_effects.Visible = false;
+            }
+        }
+
+        private void btLocal_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            folderBrowser.ShowNewFolderButton = false;
+
+            try
+            {
+                folderBrowser.SelectedPath = _lastPath;
+            }
+            catch (ArgumentNullException ex)
+            {
+                folderBrowser.RootFolder = Environment.SpecialFolder.MyComputer;
+            }
+
+            if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
+            {
+                string extensions = "*.mp3";
+                var paths = Directory.GetFiles(folderBrowser.SelectedPath, extensions, SearchOption.AllDirectories);
+
+                foreach (string path in paths)
+                {
+                    if (!_songFiles.Contains(path))
+                    {
+                        AddSongsToLists(path);
+                    }
+                }
             }
         }
 
@@ -249,38 +266,7 @@ namespace NAudio_Spotify_Local
 
             ListSong.Items.Add(name);
         }
-
-
-        private void btLocal_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            folderBrowser.ShowNewFolderButton = false;
-
-            try
-            {
-                folderBrowser.SelectedPath = _lastPath;
-            }
-            catch (ArgumentNullException ex)
-            {
-                folderBrowser.RootFolder = Environment.SpecialFolder.MyComputer;
-            }
-
-            if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
-            {
-                string extensions = "*.mp3";
-                var paths = Directory.GetFiles(folderBrowser.SelectedPath, extensions, SearchOption.AllDirectories);
-
-                foreach (string path in paths)
-                {
-                    if (!_songFiles.Contains(path))
-                    {
-                        AddSongsToLists(path);
-                    }
-                }
-            }
-        }
-
-        
+                
         private void ListSong_DoubleClick(object sender, MouseEventArgs e)
         {
             if (Pic_effects.Visible == false)

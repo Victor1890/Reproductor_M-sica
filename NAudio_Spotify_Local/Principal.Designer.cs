@@ -64,7 +64,6 @@
             this.l_Song_1 = new System.Windows.Forms.Label();
             this.btMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btMax = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.ListSong = new System.Windows.Forms.ListBox();
@@ -85,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_effects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btMax)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.SuspendLayout();
@@ -360,7 +358,7 @@
             this.btStop.BackColor = System.Drawing.Color.Transparent;
             this.btStop.Image = global::NAudio_Spotify_Local.Properties.Resources.stop;
             this.btStop.ImageActive = null;
-            this.btStop.Location = new System.Drawing.Point(461, 57);
+            this.btStop.Location = new System.Drawing.Point(578, 57);
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(40, 40);
             this.btStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -375,7 +373,7 @@
             this.btRight.BackColor = System.Drawing.Color.Transparent;
             this.btRight.Image = global::NAudio_Spotify_Local.Properties.Resources.more;
             this.btRight.ImageActive = null;
-            this.btRight.Location = new System.Drawing.Point(651, 57);
+            this.btRight.Location = new System.Drawing.Point(768, 57);
             this.btRight.Name = "btRight";
             this.btRight.Size = new System.Drawing.Size(40, 40);
             this.btRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -390,7 +388,7 @@
             this.btLeft.BackColor = System.Drawing.Color.Transparent;
             this.btLeft.Image = global::NAudio_Spotify_Local.Properties.Resources.chevron;
             this.btLeft.ImageActive = null;
-            this.btLeft.Location = new System.Drawing.Point(540, 57);
+            this.btLeft.Location = new System.Drawing.Point(657, 57);
             this.btLeft.Name = "btLeft";
             this.btLeft.Size = new System.Drawing.Size(40, 40);
             this.btLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -405,7 +403,7 @@
             this.btPlay.BackColor = System.Drawing.Color.Transparent;
             this.btPlay.Image = global::NAudio_Spotify_Local.Properties.Resources.Play;
             this.btPlay.ImageActive = null;
-            this.btPlay.Location = new System.Drawing.Point(584, 46);
+            this.btPlay.Location = new System.Drawing.Point(701, 46);
             this.btPlay.Name = "btPlay";
             this.btPlay.Size = new System.Drawing.Size(64, 64);
             this.btPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -517,6 +515,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel2.BackgroundImage = global::NAudio_Spotify_Local.Properties.Resources.Watch_Dog_2;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.Pic_effects);
             this.panel2.Controls.Add(this.l_Artist_1);
             this.panel2.Controls.Add(this.bunifuThinButton24);
@@ -525,7 +525,6 @@
             this.panel2.Controls.Add(this.l_Song_1);
             this.panel2.Controls.Add(this.btMin);
             this.panel2.Controls.Add(this.btExit);
-            this.panel2.Controls.Add(this.btMax);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(287, 0);
             this.panel2.Name = "panel2";
@@ -563,12 +562,11 @@
             this.bunifuThinButton24.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton24.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuThinButton24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.bunifuThinButton24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton24.BackgroundImage")));
+            this.bunifuThinButton24.BackColor = System.Drawing.Color.Transparent;
             this.bunifuThinButton24.ButtonText = "ThinButton";
             this.bunifuThinButton24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton24.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton24.ForeColor = System.Drawing.Color.White;
             this.bunifuThinButton24.IdleBorderThickness = 1;
             this.bunifuThinButton24.IdleCornerRadius = 25;
             this.bunifuThinButton24.IdleFillColor = System.Drawing.Color.Transparent;
@@ -588,12 +586,11 @@
             this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
+            this.bunifuThinButton23.BackColor = System.Drawing.Color.Transparent;
             this.bunifuThinButton23.ButtonText = "ThinButton";
             this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton23.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton23.ForeColor = System.Drawing.Color.White;
             this.bunifuThinButton23.IdleBorderThickness = 1;
             this.bunifuThinButton23.IdleCornerRadius = 25;
             this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.Transparent;
@@ -613,12 +610,11 @@
             this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.Transparent;
             this.bunifuThinButton21.ButtonText = "ThinButton";
             this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleBorderThickness = 1;
             this.bunifuThinButton21.IdleCornerRadius = 25;
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Transparent;
@@ -649,7 +645,7 @@
             this.btMin.BackColor = System.Drawing.Color.Transparent;
             this.btMin.Image = global::NAudio_Spotify_Local.Properties.Resources.Minimize_Window_96px;
             this.btMin.ImageActive = null;
-            this.btMin.Location = new System.Drawing.Point(1064, 3);
+            this.btMin.Location = new System.Drawing.Point(1100, 0);
             this.btMin.Name = "btMin";
             this.btMin.Size = new System.Drawing.Size(30, 27);
             this.btMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -672,21 +668,6 @@
             this.btExit.TabStop = false;
             this.btExit.Zoom = 10;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
-            // btMax
-            // 
-            this.btMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btMax.BackColor = System.Drawing.Color.Transparent;
-            this.btMax.Image = global::NAudio_Spotify_Local.Properties.Resources.Maximize_96px;
-            this.btMax.ImageActive = null;
-            this.btMax.Location = new System.Drawing.Point(1100, 0);
-            this.btMax.Name = "btMax";
-            this.btMax.Size = new System.Drawing.Size(30, 27);
-            this.btMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btMax.TabIndex = 3;
-            this.btMax.TabStop = false;
-            this.btMax.Zoom = 10;
-            this.btMax.Click += new System.EventHandler(this.btMax_Click);
             // 
             // bunifuDragControl2
             // 
@@ -769,7 +750,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_effects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btMax)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             this.ResumeLayout(false);
@@ -784,7 +764,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.TextBox txtSeach;
         private Bunifu.Framework.UI.BunifuImageButton btMin;
-        private Bunifu.Framework.UI.BunifuImageButton btMax;
         private Bunifu.Framework.UI.BunifuImageButton btExit;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
