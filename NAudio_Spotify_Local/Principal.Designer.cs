@@ -343,7 +343,7 @@
             this.btMute_Hight.BackColor = System.Drawing.Color.Transparent;
             this.btMute_Hight.Image = global::NAudio_Spotify_Local.Properties.Resources.mute;
             this.btMute_Hight.ImageActive = null;
-            this.btMute_Hight.Location = new System.Drawing.Point(985, 57);
+            this.btMute_Hight.Location = new System.Drawing.Point(964, 57);
             this.btMute_Hight.Name = "btMute_Hight";
             this.btMute_Hight.Size = new System.Drawing.Size(40, 40);
             this.btMute_Hight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -468,11 +468,11 @@
             this.bunifuSlider2.BackgroudColor = System.Drawing.Color.DarkGray;
             this.bunifuSlider2.BorderRadius = 3;
             this.bunifuSlider2.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.bunifuSlider2.Location = new System.Drawing.Point(1032, 62);
+            this.bunifuSlider2.Location = new System.Drawing.Point(1021, 62);
             this.bunifuSlider2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSlider2.MaximumValue = 100;
             this.bunifuSlider2.Name = "bunifuSlider2";
-            this.bunifuSlider2.Size = new System.Drawing.Size(113, 35);
+            this.bunifuSlider2.Size = new System.Drawing.Size(124, 35);
             this.bunifuSlider2.TabIndex = 2;
             this.bunifuSlider2.Value = 35;
             this.bunifuSlider2.ValueChanged += new System.EventHandler(this.bunifuSlider2_ValueChanged);
@@ -690,10 +690,10 @@
             this.ListSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
             this.ListSong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListSong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListSong.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListSong.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListSong.ForeColor = System.Drawing.Color.White;
             this.ListSong.FormattingEnabled = true;
-            this.ListSong.ItemHeight = 17;
+            this.ListSong.ItemHeight = 19;
             this.ListSong.Location = new System.Drawing.Point(0, 0);
             this.ListSong.Name = "ListSong";
             this.ListSong.Size = new System.Drawing.Size(752, 349);

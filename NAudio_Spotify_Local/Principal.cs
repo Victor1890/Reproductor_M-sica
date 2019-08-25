@@ -119,17 +119,6 @@ namespace NAudio_Spotify_Local
 
         private void btPlay_Click(object sender, EventArgs e)
         {
-            if (Pic_effects.Visible == false)
-            {
-                btPlay.Image = Properties.Resources.Play;
-                Pic_effects.Visible = true;
-            }
-            else
-            {
-                btPlay.Image = Properties.Resources.Pause;
-                Pic_effects.Visible = false;
-            }
-
             if (!_songFiles.Any())
             {
                 btLocal_Click(sender, e);
@@ -144,10 +133,14 @@ namespace NAudio_Spotify_Local
                 {
                     _waveOutDevice.Pause();
                     btPlay.Text = "4";
+                    btPlay.Image = Properties.Resources.Pause;
+                    Pic_effects.Visible = false;
                     return;
                 }
                 else if (_waveOutDevice.PlaybackState == PlaybackState.Paused)
                 {
+                    btPlay.Image = Properties.Resources.Play;
+                    Pic_effects.Visible = true;
                     _waveOutDevice.Play();
                     btPlay.Text = ";";
                     return;
@@ -156,7 +149,6 @@ namespace NAudio_Spotify_Local
                 _songIndex = ListSong.SelectedIndex;
 
                 PlaySong(_songIndex);
-
             }
         }
         //Cosas
