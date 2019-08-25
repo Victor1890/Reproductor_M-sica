@@ -104,12 +104,12 @@ namespace NAudio_Spotify_Local
         {
             if (Pic_effects.Visible == false)
             {
-                btPlay.Image = Properties.Resources.Pause;
+                btPlay.Image = Properties.Resources.Play;
                 Pic_effects.Visible = true;
             }
             else
             {
-                btPlay.Image = Properties.Resources.Play;
+                btPlay.Image = Properties.Resources.Pause;
                 Pic_effects.Visible = false;
             }
 
@@ -281,17 +281,17 @@ namespace NAudio_Spotify_Local
         }
 
 
-        //
+        
         private void ListSong_DoubleClick(object sender, MouseEventArgs e)
         {
             if (Pic_effects.Visible == false)
             {
-                btPlay.Image = Properties.Resources.Pause;
+                btPlay.Image = Properties.Resources.Play;
                 Pic_effects.Visible = true;
             }
             else
             {
-                btPlay.Image = Properties.Resources.Play;
+                btPlay.Image = Properties.Resources.Pause;
                 Pic_effects.Visible = false;
             }
 
@@ -320,9 +320,18 @@ namespace NAudio_Spotify_Local
         {
             if (_waveOutDevice != null)
             {
-                btPlay.Text = "4";
-                ClearAll();
-                ListSong.SelectedIndex = -1;
+                if (_waveOutDevice.PlaybackState == PlaybackState.Playing)
+                {
+                    if (Pic_effects.Visible == true)
+                    {
+                        btPlay.Image = Properties.Resources.Play;
+                        Pic_effects.Visible = false;
+                    }
+                    _waveOutDevice.Stop();
+                    btPlay.Text = "4";
+                    ClearAll();
+                    ListSong.SelectedIndex = -1;
+                }
             }
         }
 
@@ -381,6 +390,7 @@ namespace NAudio_Spotify_Local
             }
             catch (ArgumentOutOfRangeException ex)
             {
+                ex.ToString();
                 if (sym == '+')
                 {
 
@@ -462,11 +472,15 @@ namespace NAudio_Spotify_Local
             }
             
 
-            if (bunifuSlider2.Value < 0)
+            if (bunifuSlider2.Value < 12)
             {
-                btMute_Hight.Image = Properties.Resources.mute;
+                if (_waveOutDevice.Volume < 12)
+                {
+                    btMute_Hight.Image = Properties.Resources.mute;
+                    _waveOutDevice.Volume = 0;
+                }
             }
-            else if (bunifuSlider2.Value > 1 || bunifuSlider2.Value < 79)
+            else if (bunifuSlider2.Value > 13 || bunifuSlider2.Value < 79)
             {
                 btMute_Hight.Image = Properties.Resources.Medium_Volume;
             }

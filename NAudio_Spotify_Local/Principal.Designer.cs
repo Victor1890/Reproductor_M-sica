@@ -445,7 +445,7 @@
             this.l_time_final.BackColor = System.Drawing.Color.Transparent;
             this.l_time_final.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.l_time_final.ForeColor = System.Drawing.Color.White;
-            this.l_time_final.Location = new System.Drawing.Point(1115, 11);
+            this.l_time_final.Location = new System.Drawing.Point(1103, 13);
             this.l_time_final.Name = "l_time_final";
             this.l_time_final.Size = new System.Drawing.Size(42, 21);
             this.l_time_final.TabIndex = 7;
@@ -457,7 +457,7 @@
             this.l_time_inial.BackColor = System.Drawing.Color.Transparent;
             this.l_time_inial.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.l_time_inial.ForeColor = System.Drawing.Color.White;
-            this.l_time_inial.Location = new System.Drawing.Point(192, 13);
+            this.l_time_inial.Location = new System.Drawing.Point(191, 13);
             this.l_time_inial.Name = "l_time_inial";
             this.l_time_inial.Size = new System.Drawing.Size(42, 21);
             this.l_time_inial.TabIndex = 6;
@@ -476,7 +476,7 @@
             this.bunifuSlider2.Name = "bunifuSlider2";
             this.bunifuSlider2.Size = new System.Drawing.Size(113, 35);
             this.bunifuSlider2.TabIndex = 2;
-            this.bunifuSlider2.Value = 0;
+            this.bunifuSlider2.Value = 35;
             this.bunifuSlider2.ValueChanged += new System.EventHandler(this.bunifuSlider2_ValueChanged);
             // 
             // bunifuSlider1
@@ -487,11 +487,11 @@
             this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
             this.bunifuSlider1.BorderRadius = 5;
             this.bunifuSlider1.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.bunifuSlider1.Location = new System.Drawing.Point(241, 8);
+            this.bunifuSlider1.Location = new System.Drawing.Point(255, 8);
             this.bunifuSlider1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSlider1.MaximumValue = 100;
             this.bunifuSlider1.Name = "bunifuSlider1";
-            this.bunifuSlider1.Size = new System.Drawing.Size(870, 35);
+            this.bunifuSlider1.Size = new System.Drawing.Size(839, 35);
             this.bunifuSlider1.TabIndex = 1;
             this.bunifuSlider1.Value = 0;
             this.bunifuSlider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
@@ -502,7 +502,7 @@
             this.thumbnail2.Dock = System.Windows.Forms.DockStyle.Left;
             this.thumbnail2.Location = new System.Drawing.Point(0, 0);
             this.thumbnail2.Name = "thumbnail2";
-            this.thumbnail2.Size = new System.Drawing.Size(181, 123);
+            this.thumbnail2.Size = new System.Drawing.Size(177, 123);
             this.thumbnail2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail2.TabIndex = 0;
             this.thumbnail2.TabStop = false;
@@ -706,11 +706,13 @@
             // 
             // ListSong
             // 
-            this.ListSong.BackColor = System.Drawing.Color.DimGray;
+            this.ListSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
             this.ListSong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListSong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListSong.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListSong.ForeColor = System.Drawing.Color.White;
             this.ListSong.FormattingEnabled = true;
-            this.ListSong.ItemHeight = 16;
+            this.ListSong.ItemHeight = 17;
             this.ListSong.Location = new System.Drawing.Point(0, 0);
             this.ListSong.Name = "ListSong";
             this.ListSong.Size = new System.Drawing.Size(752, 349);
