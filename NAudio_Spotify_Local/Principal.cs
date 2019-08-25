@@ -280,7 +280,6 @@ namespace NAudio_Spotify_Local
             }
         }
 
-
         
         private void ListSong_DoubleClick(object sender, MouseEventArgs e)
         {
@@ -445,7 +444,15 @@ namespace NAudio_Spotify_Local
 
         private void ClearAll()
         {
-            //
+            l_Album.Text = string.Empty;
+            l_Artist_1.Text = string.Empty;
+            l_Artist_2.Text = string.Empty;
+            l_Song_1.Text = string.Empty;
+            l_time_final.Text = "0:00";
+            l_time_inial.Text = "0:00";
+
+            thumbnail.Image = null;
+            thumbnail2.Image = null;
         }
 
         private void bunifuSlider2_ValueChanged(object sender, EventArgs e)
