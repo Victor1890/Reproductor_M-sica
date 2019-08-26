@@ -64,17 +64,12 @@ namespace NAudio_Spotify_Local
             //play_Items3.isPlaying = false;
 
             ((Play_Items)sender).isPlaying = true;
-            string song = (string)((Play_Items)sender).Tag;
+            var song = (string)((Play_Items)sender).Tag;
 
             //Play Song
             thumbnail.Image = ((Play_Items)sender).Thumbnail;
             thumbnail2.Image = ((Play_Items)sender).Thumbnail;
-
-            //Name, Artist Song
-            l_Song_1.Text = ((Play_Items)sender).Song;
-            l_Artist_1.Text = ((Play_Items)sender).Artist;
-            l_Artist_1.Text = ((Play_Items)sender).Artist;
-
+            
             //Effecto de audio
             if (Pic_effects.Visible == false)
             {
@@ -477,17 +472,17 @@ namespace NAudio_Spotify_Local
 
         private void txtSeach_TextChanged(object sender, EventArgs e)
         {
-            var registrationsList = ListSong.Items.Cast<String>().ToList();
-            ListSong.BeginUpdate();
-            ListSong.Items.Clear();
-            foreach (string str in registrationsList)
-            {
-                if (str.Contains(txtSeach.Text))
-                {
-                    ListSong.Items.Add(str);
-                }
-            }
-            ListSong.EndUpdate();
+            //var registrationsList = ListSong.Items.Cast<String>().ToList();
+            //ListSong.BeginUpdate();
+            //ListSong.Items.Clear();
+            //foreach (string str in registrationsList)
+            //{
+            //    if (str.Contains(txtSeach.Text))
+            //    {
+            //        ListSong.Items.Add(str);
+            //    }
+            //}
+            //ListSong.EndUpdate();
         }
     }
 }

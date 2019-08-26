@@ -32,57 +32,59 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btGitHub = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btInstagram = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btLocal = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btArtist = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btAlbums = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btMusic = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.btSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btMute_Hight = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btStop = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btRight = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btLeft = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btPlay = new Bunifu.Framework.UI.BunifuImageButton();
             this.l_Album = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Artist_2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_time_final = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_time_inial = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSlider2 = new Bunifu.Framework.UI.BunifuSlider();
             this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
-            this.thumbnail2 = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ListSong = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.thumbnail = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Pic_effects = new System.Windows.Forms.PictureBox();
             this.l_Artist_1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Song_1 = new System.Windows.Forms.Label();
             this.btMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.ListSong = new System.Windows.Forms.ListBox();
-            this.thumbnail = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btMute_Hight = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btStop = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btRight = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btLeft = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btPlay = new Bunifu.Framework.UI.BunifuImageButton();
+            this.thumbnail2 = new System.Windows.Forms.PictureBox();
+            this.btDownload = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btMusic = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btGitHub = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btInstagram = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btLocal = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btArtist = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btAlbums = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_effects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMute_Hight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail2)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_effects)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -93,12 +95,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.btDownload);
+            this.panel1.Controls.Add(this.btMusic);
             this.panel1.Controls.Add(this.btGitHub);
             this.panel1.Controls.Add(this.btInstagram);
             this.panel1.Controls.Add(this.btLocal);
             this.panel1.Controls.Add(this.btArtist);
             this.panel1.Controls.Add(this.btAlbums);
-            this.panel1.Controls.Add(this.btMusic);
+            this.panel1.Controls.Add(this.btPrincipal);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btSearch);
             this.panel1.Controls.Add(this.txtSeach);
@@ -108,202 +112,17 @@
             this.panel1.Size = new System.Drawing.Size(287, 776);
             this.panel1.TabIndex = 0;
             // 
-            // btGitHub
-            // 
-            this.btGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btGitHub.BackColor = System.Drawing.Color.Transparent;
-            this.btGitHub.Image = global::NAudio_Spotify_Local.Properties.Resources.github_96px;
-            this.btGitHub.ImageActive = null;
-            this.btGitHub.Location = new System.Drawing.Point(39, 738);
-            this.btGitHub.Name = "btGitHub";
-            this.btGitHub.Size = new System.Drawing.Size(30, 27);
-            this.btGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btGitHub.TabIndex = 11;
-            this.btGitHub.TabStop = false;
-            this.btGitHub.Zoom = 10;
-            this.btGitHub.Click += new System.EventHandler(this.btGitHub_Click);
-            // 
-            // btInstagram
-            // 
-            this.btInstagram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btInstagram.BackColor = System.Drawing.Color.Transparent;
-            this.btInstagram.Image = global::NAudio_Spotify_Local.Properties.Resources.instagram_96px;
-            this.btInstagram.ImageActive = null;
-            this.btInstagram.Location = new System.Drawing.Point(3, 738);
-            this.btInstagram.Name = "btInstagram";
-            this.btInstagram.Size = new System.Drawing.Size(30, 27);
-            this.btInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btInstagram.TabIndex = 10;
-            this.btInstagram.TabStop = false;
-            this.btInstagram.Zoom = 10;
-            this.btInstagram.Click += new System.EventHandler(this.btInstagram_Click);
-            // 
-            // btLocal
-            // 
-            this.btLocal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btLocal.BorderRadius = 0;
-            this.btLocal.ButtonText = "            Archivos Locales";
-            this.btLocal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLocal.DisabledColor = System.Drawing.Color.Gray;
-            this.btLocal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btLocal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLocal.Iconimage")));
-            this.btLocal.Iconimage_right = null;
-            this.btLocal.Iconimage_right_Selected = null;
-            this.btLocal.Iconimage_Selected = null;
-            this.btLocal.IconMarginLeft = 0;
-            this.btLocal.IconMarginRight = 0;
-            this.btLocal.IconRightVisible = true;
-            this.btLocal.IconRightZoom = 0D;
-            this.btLocal.IconVisible = true;
-            this.btLocal.IconZoom = 85D;
-            this.btLocal.IsTab = false;
-            this.btLocal.Location = new System.Drawing.Point(7, 494);
-            this.btLocal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btLocal.Name = "btLocal";
-            this.btLocal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btLocal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btLocal.OnHoverTextColor = System.Drawing.Color.White;
-            this.btLocal.selected = false;
-            this.btLocal.Size = new System.Drawing.Size(276, 59);
-            this.btLocal.TabIndex = 9;
-            this.btLocal.Text = "            Archivos Locales";
-            this.btLocal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLocal.Textcolor = System.Drawing.Color.White;
-            this.btLocal.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
-            this.btLocal.Click += new System.EventHandler(this.btLocal_Click);
-            // 
-            // btArtist
-            // 
-            this.btArtist.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btArtist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btArtist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btArtist.BorderRadius = 0;
-            this.btArtist.ButtonText = "            Artistas";
-            this.btArtist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btArtist.DisabledColor = System.Drawing.Color.Gray;
-            this.btArtist.Iconcolor = System.Drawing.Color.Transparent;
-            this.btArtist.Iconimage = ((System.Drawing.Image)(resources.GetObject("btArtist.Iconimage")));
-            this.btArtist.Iconimage_right = null;
-            this.btArtist.Iconimage_right_Selected = null;
-            this.btArtist.Iconimage_Selected = null;
-            this.btArtist.IconMarginLeft = 0;
-            this.btArtist.IconMarginRight = 0;
-            this.btArtist.IconRightVisible = true;
-            this.btArtist.IconRightZoom = 0D;
-            this.btArtist.IconVisible = true;
-            this.btArtist.IconZoom = 80D;
-            this.btArtist.IsTab = false;
-            this.btArtist.Location = new System.Drawing.Point(7, 427);
-            this.btArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btArtist.Name = "btArtist";
-            this.btArtist.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btArtist.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btArtist.OnHoverTextColor = System.Drawing.Color.White;
-            this.btArtist.selected = false;
-            this.btArtist.Size = new System.Drawing.Size(276, 59);
-            this.btArtist.TabIndex = 8;
-            this.btArtist.Text = "            Artistas";
-            this.btArtist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btArtist.Textcolor = System.Drawing.Color.White;
-            this.btArtist.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
-            // 
-            // btAlbums
-            // 
-            this.btAlbums.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btAlbums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btAlbums.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btAlbums.BorderRadius = 0;
-            this.btAlbums.ButtonText = "            Albunes";
-            this.btAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btAlbums.DisabledColor = System.Drawing.Color.Gray;
-            this.btAlbums.Iconcolor = System.Drawing.Color.Transparent;
-            this.btAlbums.Iconimage = ((System.Drawing.Image)(resources.GetObject("btAlbums.Iconimage")));
-            this.btAlbums.Iconimage_right = null;
-            this.btAlbums.Iconimage_right_Selected = null;
-            this.btAlbums.Iconimage_Selected = null;
-            this.btAlbums.IconMarginLeft = 0;
-            this.btAlbums.IconMarginRight = 0;
-            this.btAlbums.IconRightVisible = true;
-            this.btAlbums.IconRightZoom = 0D;
-            this.btAlbums.IconVisible = true;
-            this.btAlbums.IconZoom = 90D;
-            this.btAlbums.IsTab = false;
-            this.btAlbums.Location = new System.Drawing.Point(7, 360);
-            this.btAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btAlbums.Name = "btAlbums";
-            this.btAlbums.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btAlbums.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btAlbums.OnHoverTextColor = System.Drawing.Color.White;
-            this.btAlbums.selected = false;
-            this.btAlbums.Size = new System.Drawing.Size(276, 59);
-            this.btAlbums.TabIndex = 7;
-            this.btAlbums.Text = "            Albunes";
-            this.btAlbums.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAlbums.Textcolor = System.Drawing.Color.White;
-            this.btAlbums.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
-            // 
-            // btMusic
-            // 
-            this.btMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btMusic.BorderRadius = 0;
-            this.btMusic.ButtonText = "            Música";
-            this.btMusic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMusic.DisabledColor = System.Drawing.Color.Gray;
-            this.btMusic.Iconcolor = System.Drawing.Color.Transparent;
-            this.btMusic.Iconimage = ((System.Drawing.Image)(resources.GetObject("btMusic.Iconimage")));
-            this.btMusic.Iconimage_right = null;
-            this.btMusic.Iconimage_right_Selected = null;
-            this.btMusic.Iconimage_Selected = null;
-            this.btMusic.IconMarginLeft = 0;
-            this.btMusic.IconMarginRight = 0;
-            this.btMusic.IconRightVisible = true;
-            this.btMusic.IconRightZoom = 0D;
-            this.btMusic.IconVisible = true;
-            this.btMusic.IconZoom = 60D;
-            this.btMusic.IsTab = false;
-            this.btMusic.Location = new System.Drawing.Point(7, 293);
-            this.btMusic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btMusic.Name = "btMusic";
-            this.btMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
-            this.btMusic.OnHoverTextColor = System.Drawing.Color.White;
-            this.btMusic.selected = false;
-            this.btMusic.Size = new System.Drawing.Size(276, 59);
-            this.btMusic.TabIndex = 6;
-            this.btMusic.Text = "            Música";
-            this.btMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btMusic.Textcolor = System.Drawing.Color.White;
-            this.btMusic.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(12, 255);
+            this.label2.Location = new System.Drawing.Point(12, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tu Música";
-            // 
-            // btSearch
-            // 
-            this.btSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btSearch.Image = global::NAudio_Spotify_Local.Properties.Resources.lupa;
-            this.btSearch.ImageActive = null;
-            this.btSearch.Location = new System.Drawing.Point(173, 73);
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(39, 39);
-            this.btSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btSearch.TabIndex = 1;
-            this.btSearch.TabStop = false;
-            this.btSearch.Zoom = 10;
-            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // txtSeach
             // 
@@ -335,81 +154,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1169, 123);
             this.panel3.TabIndex = 2;
-            // 
-            // btMute_Hight
-            // 
-            this.btMute_Hight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btMute_Hight.BackColor = System.Drawing.Color.Transparent;
-            this.btMute_Hight.Image = global::NAudio_Spotify_Local.Properties.Resources.mute;
-            this.btMute_Hight.ImageActive = null;
-            this.btMute_Hight.Location = new System.Drawing.Point(964, 57);
-            this.btMute_Hight.Name = "btMute_Hight";
-            this.btMute_Hight.Size = new System.Drawing.Size(40, 40);
-            this.btMute_Hight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btMute_Hight.TabIndex = 16;
-            this.btMute_Hight.TabStop = false;
-            this.btMute_Hight.Zoom = 10;
-            this.btMute_Hight.Click += new System.EventHandler(this.btMute_Hight_Click);
-            // 
-            // btStop
-            // 
-            this.btStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btStop.BackColor = System.Drawing.Color.Transparent;
-            this.btStop.Image = global::NAudio_Spotify_Local.Properties.Resources.stop;
-            this.btStop.ImageActive = null;
-            this.btStop.Location = new System.Drawing.Point(591, 57);
-            this.btStop.Name = "btStop";
-            this.btStop.Size = new System.Drawing.Size(40, 40);
-            this.btStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btStop.TabIndex = 15;
-            this.btStop.TabStop = false;
-            this.btStop.Zoom = 10;
-            this.btStop.Click += new System.EventHandler(this.btStop_Click);
-            // 
-            // btRight
-            // 
-            this.btRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btRight.BackColor = System.Drawing.Color.Transparent;
-            this.btRight.Image = global::NAudio_Spotify_Local.Properties.Resources.more;
-            this.btRight.ImageActive = null;
-            this.btRight.Location = new System.Drawing.Point(768, 57);
-            this.btRight.Name = "btRight";
-            this.btRight.Size = new System.Drawing.Size(40, 40);
-            this.btRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btRight.TabIndex = 14;
-            this.btRight.TabStop = false;
-            this.btRight.Zoom = 10;
-            this.btRight.Click += new System.EventHandler(this.btRight_Click);
-            // 
-            // btLeft
-            // 
-            this.btLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btLeft.BackColor = System.Drawing.Color.Transparent;
-            this.btLeft.Image = global::NAudio_Spotify_Local.Properties.Resources.chevron;
-            this.btLeft.ImageActive = null;
-            this.btLeft.Location = new System.Drawing.Point(657, 57);
-            this.btLeft.Name = "btLeft";
-            this.btLeft.Size = new System.Drawing.Size(40, 40);
-            this.btLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btLeft.TabIndex = 13;
-            this.btLeft.TabStop = false;
-            this.btLeft.Zoom = 10;
-            this.btLeft.Click += new System.EventHandler(this.btLeft_Click);
-            // 
-            // btPlay
-            // 
-            this.btPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btPlay.BackColor = System.Drawing.Color.Transparent;
-            this.btPlay.Image = global::NAudio_Spotify_Local.Properties.Resources.Play;
-            this.btPlay.ImageActive = null;
-            this.btPlay.Location = new System.Drawing.Point(701, 46);
-            this.btPlay.Name = "btPlay";
-            this.btPlay.Size = new System.Drawing.Size(64, 64);
-            this.btPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btPlay.TabIndex = 12;
-            this.btPlay.TabStop = false;
-            this.btPlay.Zoom = 10;
-            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
             // 
             // l_Album
             // 
@@ -493,22 +237,59 @@
             this.bunifuSlider1.Value = 0;
             this.bunifuSlider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
             // 
-            // thumbnail2
-            // 
-            this.thumbnail2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.thumbnail2.Location = new System.Drawing.Point(0, 0);
-            this.thumbnail2.Name = "thumbnail2";
-            this.thumbnail2.Size = new System.Drawing.Size(177, 123);
-            this.thumbnail2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.thumbnail2.TabIndex = 0;
-            this.thumbnail2.TabStop = false;
-            // 
             // bunifuDragControl1
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panel2;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panel1;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.ListSong);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(287, 304);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(752, 349);
+            this.panel4.TabIndex = 4;
+            // 
+            // ListSong
+            // 
+            this.ListSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.ListSong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListSong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListSong.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListSong.ForeColor = System.Drawing.Color.White;
+            this.ListSong.FormattingEnabled = true;
+            this.ListSong.ItemHeight = 19;
+            this.ListSong.Location = new System.Drawing.Point(0, 0);
+            this.ListSong.Name = "ListSong";
+            this.ListSong.Size = new System.Drawing.Size(752, 349);
+            this.ListSong.TabIndex = 0;
+            this.ListSong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListSong_DoubleClick);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // thumbnail
+            // 
+            this.thumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thumbnail.Location = new System.Drawing.Point(1039, 304);
+            this.thumbnail.Name = "thumbnail";
+            this.thumbnail.Size = new System.Drawing.Size(417, 349);
+            this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.thumbnail.TabIndex = 5;
+            this.thumbnail.TabStop = false;
             // 
             // panel2
             // 
@@ -591,52 +372,345 @@
             this.btExit.Zoom = 10;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
-            // bunifuDragControl2
+            // btMute_Hight
             // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this.panel1;
-            this.bunifuDragControl2.Vertical = true;
+            this.btMute_Hight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btMute_Hight.BackColor = System.Drawing.Color.Transparent;
+            this.btMute_Hight.Image = global::NAudio_Spotify_Local.Properties.Resources.mute;
+            this.btMute_Hight.ImageActive = null;
+            this.btMute_Hight.Location = new System.Drawing.Point(964, 57);
+            this.btMute_Hight.Name = "btMute_Hight";
+            this.btMute_Hight.Size = new System.Drawing.Size(40, 40);
+            this.btMute_Hight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btMute_Hight.TabIndex = 16;
+            this.btMute_Hight.TabStop = false;
+            this.btMute_Hight.Zoom = 10;
+            this.btMute_Hight.Click += new System.EventHandler(this.btMute_Hight_Click);
             // 
-            // panel4
+            // btStop
             // 
-            this.panel4.Controls.Add(this.ListSong);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(287, 304);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(752, 349);
-            this.panel4.TabIndex = 4;
+            this.btStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btStop.BackColor = System.Drawing.Color.Transparent;
+            this.btStop.Image = global::NAudio_Spotify_Local.Properties.Resources.stop;
+            this.btStop.ImageActive = null;
+            this.btStop.Location = new System.Drawing.Point(591, 57);
+            this.btStop.Name = "btStop";
+            this.btStop.Size = new System.Drawing.Size(40, 40);
+            this.btStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btStop.TabIndex = 15;
+            this.btStop.TabStop = false;
+            this.btStop.Zoom = 10;
+            this.btStop.Click += new System.EventHandler(this.btStop_Click);
             // 
-            // ListSong
+            // btRight
             // 
-            this.ListSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.ListSong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListSong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListSong.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListSong.ForeColor = System.Drawing.Color.White;
-            this.ListSong.FormattingEnabled = true;
-            this.ListSong.ItemHeight = 19;
-            this.ListSong.Location = new System.Drawing.Point(0, 0);
-            this.ListSong.Name = "ListSong";
-            this.ListSong.Size = new System.Drawing.Size(752, 349);
-            this.ListSong.TabIndex = 0;
-            this.ListSong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListSong_DoubleClick);
+            this.btRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btRight.BackColor = System.Drawing.Color.Transparent;
+            this.btRight.Image = global::NAudio_Spotify_Local.Properties.Resources.more;
+            this.btRight.ImageActive = null;
+            this.btRight.Location = new System.Drawing.Point(768, 57);
+            this.btRight.Name = "btRight";
+            this.btRight.Size = new System.Drawing.Size(40, 40);
+            this.btRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btRight.TabIndex = 14;
+            this.btRight.TabStop = false;
+            this.btRight.Zoom = 10;
+            this.btRight.Click += new System.EventHandler(this.btRight_Click);
             // 
-            // thumbnail
+            // btLeft
             // 
-            this.thumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thumbnail.Location = new System.Drawing.Point(1039, 304);
-            this.thumbnail.Name = "thumbnail";
-            this.thumbnail.Size = new System.Drawing.Size(417, 349);
-            this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.thumbnail.TabIndex = 5;
-            this.thumbnail.TabStop = false;
+            this.btLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btLeft.BackColor = System.Drawing.Color.Transparent;
+            this.btLeft.Image = global::NAudio_Spotify_Local.Properties.Resources.chevron;
+            this.btLeft.ImageActive = null;
+            this.btLeft.Location = new System.Drawing.Point(657, 57);
+            this.btLeft.Name = "btLeft";
+            this.btLeft.Size = new System.Drawing.Size(40, 40);
+            this.btLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btLeft.TabIndex = 13;
+            this.btLeft.TabStop = false;
+            this.btLeft.Zoom = 10;
+            this.btLeft.Click += new System.EventHandler(this.btLeft_Click);
             // 
-            // timer1
+            // btPlay
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btPlay.Image = global::NAudio_Spotify_Local.Properties.Resources.Play;
+            this.btPlay.ImageActive = null;
+            this.btPlay.Location = new System.Drawing.Point(701, 46);
+            this.btPlay.Name = "btPlay";
+            this.btPlay.Size = new System.Drawing.Size(64, 64);
+            this.btPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btPlay.TabIndex = 12;
+            this.btPlay.TabStop = false;
+            this.btPlay.Zoom = 10;
+            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
+            // 
+            // thumbnail2
+            // 
+            this.thumbnail2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.thumbnail2.Location = new System.Drawing.Point(0, 0);
+            this.thumbnail2.Name = "thumbnail2";
+            this.thumbnail2.Size = new System.Drawing.Size(177, 123);
+            this.thumbnail2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.thumbnail2.TabIndex = 0;
+            this.thumbnail2.TabStop = false;
+            // 
+            // btDownload
+            // 
+            this.btDownload.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btDownload.BorderRadius = 0;
+            this.btDownload.ButtonText = "            Descargas";
+            this.btDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDownload.DisabledColor = System.Drawing.Color.Gray;
+            this.btDownload.Iconcolor = System.Drawing.Color.Transparent;
+            this.btDownload.Iconimage = global::NAudio_Spotify_Local.Properties.Resources.download;
+            this.btDownload.Iconimage_right = null;
+            this.btDownload.Iconimage_right_Selected = null;
+            this.btDownload.Iconimage_Selected = null;
+            this.btDownload.IconMarginLeft = 0;
+            this.btDownload.IconMarginRight = 0;
+            this.btDownload.IconRightVisible = true;
+            this.btDownload.IconRightZoom = 0D;
+            this.btDownload.IconVisible = true;
+            this.btDownload.IconZoom = 70D;
+            this.btDownload.IsTab = false;
+            this.btDownload.Location = new System.Drawing.Point(7, 559);
+            this.btDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btDownload.Name = "btDownload";
+            this.btDownload.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btDownload.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btDownload.OnHoverTextColor = System.Drawing.Color.White;
+            this.btDownload.selected = false;
+            this.btDownload.Size = new System.Drawing.Size(276, 59);
+            this.btDownload.TabIndex = 13;
+            this.btDownload.Text = "            Descargas";
+            this.btDownload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDownload.Textcolor = System.Drawing.Color.White;
+            this.btDownload.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
+            // 
+            // btMusic
+            // 
+            this.btMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btMusic.BorderRadius = 0;
+            this.btMusic.ButtonText = "            Música";
+            this.btMusic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMusic.DisabledColor = System.Drawing.Color.Gray;
+            this.btMusic.Iconcolor = System.Drawing.Color.Transparent;
+            this.btMusic.Iconimage = ((System.Drawing.Image)(resources.GetObject("btMusic.Iconimage")));
+            this.btMusic.Iconimage_right = null;
+            this.btMusic.Iconimage_right_Selected = null;
+            this.btMusic.Iconimage_Selected = null;
+            this.btMusic.IconMarginLeft = 0;
+            this.btMusic.IconMarginRight = 0;
+            this.btMusic.IconRightVisible = true;
+            this.btMusic.IconRightZoom = 0D;
+            this.btMusic.IconVisible = true;
+            this.btMusic.IconZoom = 60D;
+            this.btMusic.IsTab = false;
+            this.btMusic.Location = new System.Drawing.Point(3, 288);
+            this.btMusic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btMusic.Name = "btMusic";
+            this.btMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btMusic.OnHoverTextColor = System.Drawing.Color.White;
+            this.btMusic.selected = false;
+            this.btMusic.Size = new System.Drawing.Size(276, 59);
+            this.btMusic.TabIndex = 12;
+            this.btMusic.Text = "            Música";
+            this.btMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMusic.Textcolor = System.Drawing.Color.White;
+            this.btMusic.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
+            // 
+            // btGitHub
+            // 
+            this.btGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btGitHub.BackColor = System.Drawing.Color.Transparent;
+            this.btGitHub.Image = global::NAudio_Spotify_Local.Properties.Resources.github_96px;
+            this.btGitHub.ImageActive = null;
+            this.btGitHub.Location = new System.Drawing.Point(39, 738);
+            this.btGitHub.Name = "btGitHub";
+            this.btGitHub.Size = new System.Drawing.Size(30, 27);
+            this.btGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btGitHub.TabIndex = 11;
+            this.btGitHub.TabStop = false;
+            this.btGitHub.Zoom = 10;
+            this.btGitHub.Click += new System.EventHandler(this.btGitHub_Click);
+            // 
+            // btInstagram
+            // 
+            this.btInstagram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btInstagram.BackColor = System.Drawing.Color.Transparent;
+            this.btInstagram.Image = global::NAudio_Spotify_Local.Properties.Resources.instagram_96px;
+            this.btInstagram.ImageActive = null;
+            this.btInstagram.Location = new System.Drawing.Point(3, 738);
+            this.btInstagram.Name = "btInstagram";
+            this.btInstagram.Size = new System.Drawing.Size(30, 27);
+            this.btInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btInstagram.TabIndex = 10;
+            this.btInstagram.TabStop = false;
+            this.btInstagram.Zoom = 10;
+            this.btInstagram.Click += new System.EventHandler(this.btInstagram_Click);
+            // 
+            // btLocal
+            // 
+            this.btLocal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLocal.BorderRadius = 0;
+            this.btLocal.ButtonText = "            Archivos Locales";
+            this.btLocal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLocal.DisabledColor = System.Drawing.Color.Gray;
+            this.btLocal.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLocal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLocal.Iconimage")));
+            this.btLocal.Iconimage_right = null;
+            this.btLocal.Iconimage_right_Selected = null;
+            this.btLocal.Iconimage_Selected = null;
+            this.btLocal.IconMarginLeft = 0;
+            this.btLocal.IconMarginRight = 0;
+            this.btLocal.IconRightVisible = true;
+            this.btLocal.IconRightZoom = 0D;
+            this.btLocal.IconVisible = true;
+            this.btLocal.IconZoom = 85D;
+            this.btLocal.IsTab = false;
+            this.btLocal.Location = new System.Drawing.Point(7, 489);
+            this.btLocal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLocal.Name = "btLocal";
+            this.btLocal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btLocal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btLocal.OnHoverTextColor = System.Drawing.Color.White;
+            this.btLocal.selected = false;
+            this.btLocal.Size = new System.Drawing.Size(276, 59);
+            this.btLocal.TabIndex = 9;
+            this.btLocal.Text = "            Archivos Locales";
+            this.btLocal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLocal.Textcolor = System.Drawing.Color.White;
+            this.btLocal.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
+            this.btLocal.Click += new System.EventHandler(this.btLocal_Click);
+            // 
+            // btArtist
+            // 
+            this.btArtist.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btArtist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btArtist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btArtist.BorderRadius = 0;
+            this.btArtist.ButtonText = "            Artistas";
+            this.btArtist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btArtist.DisabledColor = System.Drawing.Color.Gray;
+            this.btArtist.Iconcolor = System.Drawing.Color.Transparent;
+            this.btArtist.Iconimage = ((System.Drawing.Image)(resources.GetObject("btArtist.Iconimage")));
+            this.btArtist.Iconimage_right = null;
+            this.btArtist.Iconimage_right_Selected = null;
+            this.btArtist.Iconimage_Selected = null;
+            this.btArtist.IconMarginLeft = 0;
+            this.btArtist.IconMarginRight = 0;
+            this.btArtist.IconRightVisible = true;
+            this.btArtist.IconRightZoom = 0D;
+            this.btArtist.IconVisible = true;
+            this.btArtist.IconZoom = 80D;
+            this.btArtist.IsTab = false;
+            this.btArtist.Location = new System.Drawing.Point(7, 422);
+            this.btArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btArtist.Name = "btArtist";
+            this.btArtist.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btArtist.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btArtist.OnHoverTextColor = System.Drawing.Color.White;
+            this.btArtist.selected = false;
+            this.btArtist.Size = new System.Drawing.Size(276, 59);
+            this.btArtist.TabIndex = 8;
+            this.btArtist.Text = "            Artistas";
+            this.btArtist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btArtist.Textcolor = System.Drawing.Color.White;
+            this.btArtist.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
+            // 
+            // btAlbums
+            // 
+            this.btAlbums.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btAlbums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btAlbums.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btAlbums.BorderRadius = 0;
+            this.btAlbums.ButtonText = "           Albunes";
+            this.btAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btAlbums.DisabledColor = System.Drawing.Color.Gray;
+            this.btAlbums.Iconcolor = System.Drawing.Color.Transparent;
+            this.btAlbums.Iconimage = ((System.Drawing.Image)(resources.GetObject("btAlbums.Iconimage")));
+            this.btAlbums.Iconimage_right = null;
+            this.btAlbums.Iconimage_right_Selected = null;
+            this.btAlbums.Iconimage_Selected = null;
+            this.btAlbums.IconMarginLeft = 0;
+            this.btAlbums.IconMarginRight = 0;
+            this.btAlbums.IconRightVisible = true;
+            this.btAlbums.IconRightZoom = 0D;
+            this.btAlbums.IconVisible = true;
+            this.btAlbums.IconZoom = 90D;
+            this.btAlbums.IsTab = false;
+            this.btAlbums.Location = new System.Drawing.Point(7, 355);
+            this.btAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAlbums.Name = "btAlbums";
+            this.btAlbums.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btAlbums.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btAlbums.OnHoverTextColor = System.Drawing.Color.White;
+            this.btAlbums.selected = false;
+            this.btAlbums.Size = new System.Drawing.Size(276, 59);
+            this.btAlbums.TabIndex = 7;
+            this.btAlbums.Text = "           Albunes";
+            this.btAlbums.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAlbums.Textcolor = System.Drawing.Color.White;
+            this.btAlbums.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
+            // 
+            // btPrincipal
+            // 
+            this.btPrincipal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btPrincipal.BorderRadius = 0;
+            this.btPrincipal.ButtonText = "            Principal";
+            this.btPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPrincipal.DisabledColor = System.Drawing.Color.Gray;
+            this.btPrincipal.Iconcolor = System.Drawing.Color.Transparent;
+            this.btPrincipal.Iconimage = global::NAudio_Spotify_Local.Properties.Resources.main;
+            this.btPrincipal.Iconimage_right = null;
+            this.btPrincipal.Iconimage_right_Selected = null;
+            this.btPrincipal.Iconimage_Selected = null;
+            this.btPrincipal.IconMarginLeft = 0;
+            this.btPrincipal.IconMarginRight = 0;
+            this.btPrincipal.IconRightVisible = true;
+            this.btPrincipal.IconRightZoom = 0D;
+            this.btPrincipal.IconVisible = true;
+            this.btPrincipal.IconZoom = 70D;
+            this.btPrincipal.IsTab = false;
+            this.btPrincipal.Location = new System.Drawing.Point(7, 221);
+            this.btPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btPrincipal.Name = "btPrincipal";
+            this.btPrincipal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btPrincipal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(22)))));
+            this.btPrincipal.OnHoverTextColor = System.Drawing.Color.White;
+            this.btPrincipal.selected = false;
+            this.btPrincipal.Size = new System.Drawing.Size(276, 59);
+            this.btPrincipal.TabIndex = 6;
+            this.btPrincipal.Text = "            Principal";
+            this.btPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btPrincipal.Textcolor = System.Drawing.Color.White;
+            this.btPrincipal.TextFont = new System.Drawing.Font("Century Gothic", 11.8F);
+            // 
+            // btSearch
+            // 
+            this.btSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btSearch.Image = global::NAudio_Spotify_Local.Properties.Resources.lupa;
+            this.btSearch.ImageActive = null;
+            this.btSearch.Location = new System.Drawing.Point(173, 73);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(39, 39);
+            this.btSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btSearch.TabIndex = 1;
+            this.btSearch.TabStop = false;
+            this.btSearch.Zoom = 10;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // Principal
             // 
@@ -657,24 +731,24 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_effects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMute_Hight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_effects)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -696,7 +770,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btLocal;
         private Bunifu.Framework.UI.BunifuFlatButton btArtist;
         private Bunifu.Framework.UI.BunifuFlatButton btAlbums;
-        private Bunifu.Framework.UI.BunifuFlatButton btMusic;
+        private Bunifu.Framework.UI.BunifuFlatButton btPrincipal;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuImageButton btGitHub;
         private Bunifu.Framework.UI.BunifuImageButton btInstagram;
@@ -717,6 +791,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ListBox ListSong;
+        private Bunifu.Framework.UI.BunifuFlatButton btMusic;
+        private Bunifu.Framework.UI.BunifuFlatButton btDownload;
     }
 }
 
