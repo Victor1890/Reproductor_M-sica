@@ -99,6 +99,7 @@ namespace NAudio_Spotify_Local
             }
             catch (ArgumentNullException ex)
             {
+                ex.ToString();
                 folderBrowser.RootFolder = Environment.SpecialFolder.MyComputer;
             }
 
@@ -125,14 +126,11 @@ namespace NAudio_Spotify_Local
                 return;
             }
 
-            btPlay.Text = ";";
-
             if (_waveOutDevice != null)
             {
                 if (_waveOutDevice.PlaybackState == PlaybackState.Playing)
                 {
                     _waveOutDevice.Pause();
-                    btPlay.Text = "4";
                     btPlay.Image = Properties.Resources.Pause;
                     Pic_effects.Visible = false;
                     return;
@@ -142,7 +140,6 @@ namespace NAudio_Spotify_Local
                     btPlay.Image = Properties.Resources.Play;
                     Pic_effects.Visible = true;
                     _waveOutDevice.Play();
-                    btPlay.Text = ";";
                     return;
                 }
 
@@ -192,6 +189,12 @@ namespace NAudio_Spotify_Local
             l_Song_1.Text = file.Tag.Title;
             l_Album.Text = file.Tag.FirstAlbumArtist;
 
+
+            items.Artist = file.Tag.FirstAlbumArtist;
+            items.Song = file.Tag.Title;
+
+            
+
             //Set artwork
             TagLib.IPicture pic;
             MemoryStream stream;
@@ -207,6 +210,7 @@ namespace NAudio_Spotify_Local
 
                 thumbnail.Image = image;
                 thumbnail2.Image = image;
+                items.Thumbnail = image;
             }
             else
             {
@@ -214,6 +218,7 @@ namespace NAudio_Spotify_Local
                 thumbnail2.Image = Properties.Resources.default_1;
             }
 
+            ListSong.Controls.Add(items);
             //Play song :P
             _waveOutDevice.Init(sampleProvider);
             _setVolumeDelegate(bunifuSlider2.Value);
@@ -228,6 +233,7 @@ namespace NAudio_Spotify_Local
             }
             catch (FileNotFoundException ex)
             {
+                ex.ToString();
                 _audioFileReader = new AudioFileReader(_songFiles.First());
             }
 
@@ -251,6 +257,7 @@ namespace NAudio_Spotify_Local
             }
             catch (IndexOutOfRangeException ex)
             {
+                ex.ToString();
                 name = Path.GetFileNameWithoutExtension(song);
             }
 
@@ -288,8 +295,6 @@ namespace NAudio_Spotify_Local
                     _waveOutDevice.Stop();
                     PlaySong(_songIndex);
                 }
-
-                btPlay.Text = ";";
             }
         }
 
@@ -305,7 +310,6 @@ namespace NAudio_Spotify_Local
                         Pic_effects.Visible = false;
                     }
                     _waveOutDevice.Stop();
-                    btPlay.Text = "4";
                     ClearAll();
                     ListSong.SelectedIndex = -1;
                 }
@@ -376,7 +380,6 @@ namespace NAudio_Spotify_Local
                 }
                 else if (sym == '-')
                 {
-                    MessageBox.Show("Test");
                     PlaySong(_songFiles.Count - 1);
                     ListSong.SelectedIndex = ListSong.Items.Count - 1;
                 }
@@ -473,6 +476,11 @@ namespace NAudio_Spotify_Local
             {
                 btMute_Hight.Image = Properties.Resources.High_Volume;
             }
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            MemoryManager.MemoryManager.ReleaseMemory();
         }
     }
 }

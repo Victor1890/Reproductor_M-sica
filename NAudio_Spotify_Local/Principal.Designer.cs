@@ -288,7 +288,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(12, 252);
+            this.label2.Location = new System.Drawing.Point(12, 255);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 5;
@@ -358,7 +358,7 @@
             this.btStop.BackColor = System.Drawing.Color.Transparent;
             this.btStop.Image = global::NAudio_Spotify_Local.Properties.Resources.stop;
             this.btStop.ImageActive = null;
-            this.btStop.Location = new System.Drawing.Point(578, 57);
+            this.btStop.Location = new System.Drawing.Point(591, 57);
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(40, 40);
             this.btStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -474,7 +474,7 @@
             this.bunifuSlider2.Name = "bunifuSlider2";
             this.bunifuSlider2.Size = new System.Drawing.Size(124, 35);
             this.bunifuSlider2.TabIndex = 2;
-            this.bunifuSlider2.Value = 35;
+            this.bunifuSlider2.Value = 15;
             this.bunifuSlider2.ValueChanged += new System.EventHandler(this.bunifuSlider2_ValueChanged);
             // 
             // bunifuSlider1
@@ -562,7 +562,8 @@
             this.bunifuThinButton24.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton24.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuThinButton24.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuThinButton24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.bunifuThinButton24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton24.BackgroundImage")));
             this.bunifuThinButton24.ButtonText = "ThinButton";
             this.bunifuThinButton24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -586,7 +587,8 @@
             this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuThinButton23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
             this.bunifuThinButton23.ButtonText = "ThinButton";
             this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -610,7 +612,8 @@
             this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
             this.bunifuThinButton21.ButtonText = "ThinButton";
             this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -732,6 +735,7 @@
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).EndInit();
