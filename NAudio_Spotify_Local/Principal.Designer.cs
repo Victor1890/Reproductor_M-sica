@@ -39,7 +39,7 @@
             this.btAlbums = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btMusic = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btMute_Hight = new Bunifu.Framework.UI.BunifuImageButton();
@@ -58,9 +58,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Pic_effects = new System.Windows.Forms.PictureBox();
             this.l_Artist_1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.l_Song_1 = new System.Windows.Forms.Label();
             this.btMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
@@ -72,7 +69,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMute_Hight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btStop)).BeginInit();
@@ -103,7 +100,7 @@
             this.panel1.Controls.Add(this.btAlbums);
             this.panel1.Controls.Add(this.btMusic);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.bunifuImageButton1);
+            this.panel1.Controls.Add(this.btSearch);
             this.panel1.Controls.Add(this.txtSeach);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -294,18 +291,19 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Tu Música";
             // 
-            // bunifuImageButton1
+            // btSearch
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::NAudio_Spotify_Local.Properties.Resources.lupa;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(173, 73);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(39, 39);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btSearch.Image = global::NAudio_Spotify_Local.Properties.Resources.lupa;
+            this.btSearch.ImageActive = null;
+            this.btSearch.Location = new System.Drawing.Point(173, 73);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(39, 39);
+            this.btSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btSearch.TabIndex = 1;
+            this.btSearch.TabStop = false;
+            this.btSearch.Zoom = 10;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // txtSeach
             // 
@@ -315,6 +313,7 @@
             this.txtSeach.Name = "txtSeach";
             this.txtSeach.Size = new System.Drawing.Size(130, 25);
             this.txtSeach.TabIndex = 0;
+            this.txtSeach.TextChanged += new System.EventHandler(this.txtSeach_TextChanged);
             // 
             // panel3
             // 
@@ -474,7 +473,7 @@
             this.bunifuSlider2.Name = "bunifuSlider2";
             this.bunifuSlider2.Size = new System.Drawing.Size(124, 35);
             this.bunifuSlider2.TabIndex = 2;
-            this.bunifuSlider2.Value = 15;
+            this.bunifuSlider2.Value = 5;
             this.bunifuSlider2.ValueChanged += new System.EventHandler(this.bunifuSlider2_ValueChanged);
             // 
             // bunifuSlider1
@@ -519,9 +518,6 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.Pic_effects);
             this.panel2.Controls.Add(this.l_Artist_1);
-            this.panel2.Controls.Add(this.bunifuThinButton24);
-            this.panel2.Controls.Add(this.bunifuThinButton23);
-            this.panel2.Controls.Add(this.bunifuThinButton21);
             this.panel2.Controls.Add(this.l_Song_1);
             this.panel2.Controls.Add(this.btMin);
             this.panel2.Controls.Add(this.btExit);
@@ -554,91 +550,15 @@
             this.l_Artist_1.TabIndex = 4;
             this.l_Artist_1.Text = "Artista";
             // 
-            // bunifuThinButton24
-            // 
-            this.bunifuThinButton24.ActiveBorderThickness = 1;
-            this.bunifuThinButton24.ActiveCornerRadius = 20;
-            this.bunifuThinButton24.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton24.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton24.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuThinButton24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.bunifuThinButton24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton24.BackgroundImage")));
-            this.bunifuThinButton24.ButtonText = "ThinButton";
-            this.bunifuThinButton24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton24.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton24.IdleBorderThickness = 1;
-            this.bunifuThinButton24.IdleCornerRadius = 25;
-            this.bunifuThinButton24.IdleFillColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton24.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton24.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton24.Location = new System.Drawing.Point(964, 234);
-            this.bunifuThinButton24.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton24.Name = "bunifuThinButton24";
-            this.bunifuThinButton24.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton24.TabIndex = 3;
-            this.bunifuThinButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuThinButton23
-            // 
-            this.bunifuThinButton23.ActiveBorderThickness = 1;
-            this.bunifuThinButton23.ActiveCornerRadius = 20;
-            this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
-            this.bunifuThinButton23.ButtonText = "ThinButton";
-            this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton23.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.IdleBorderThickness = 1;
-            this.bunifuThinButton23.IdleCornerRadius = 25;
-            this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.Location = new System.Drawing.Point(266, 234);
-            this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton23.Name = "bunifuThinButton23";
-            this.bunifuThinButton23.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton23.TabIndex = 2;
-            this.bunifuThinButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "ThinButton";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 25;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(22, 234);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton21.TabIndex = 1;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // l_Song_1
             // 
             this.l_Song_1.AutoSize = true;
             this.l_Song_1.BackColor = System.Drawing.Color.Transparent;
-            this.l_Song_1.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.l_Song_1.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.l_Song_1.ForeColor = System.Drawing.Color.White;
             this.l_Song_1.Location = new System.Drawing.Point(57, 171);
             this.l_Song_1.Name = "l_Song_1";
-            this.l_Song_1.Size = new System.Drawing.Size(191, 49);
+            this.l_Song_1.Size = new System.Drawing.Size(143, 37);
             this.l_Song_1.TabIndex = 0;
             this.l_Song_1.Text = "Canción";
             // 
@@ -740,7 +660,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMute_Hight)).EndInit();
@@ -765,7 +685,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btSearch;
         private System.Windows.Forms.TextBox txtSeach;
         private Bunifu.Framework.UI.BunifuImageButton btMin;
         private Bunifu.Framework.UI.BunifuImageButton btExit;
@@ -773,15 +693,12 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel l_Artist_1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
         private System.Windows.Forms.Label l_Song_1;
         private Bunifu.Framework.UI.BunifuFlatButton btLocal;
         private Bunifu.Framework.UI.BunifuFlatButton btArtist;
         private Bunifu.Framework.UI.BunifuFlatButton btAlbums;
         private Bunifu.Framework.UI.BunifuFlatButton btMusic;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuImageButton btGitHub;
         private Bunifu.Framework.UI.BunifuImageButton btInstagram;
         private System.Windows.Forms.PictureBox thumbnail2;

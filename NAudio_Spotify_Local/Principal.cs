@@ -137,9 +137,9 @@ namespace NAudio_Spotify_Local
                 }
                 else if (_waveOutDevice.PlaybackState == PlaybackState.Paused)
                 {
+                    _waveOutDevice.Play();
                     btPlay.Image = Properties.Resources.Play;
                     Pic_effects.Visible = true;
-                    _waveOutDevice.Play();
                     return;
                 }
 
@@ -458,29 +458,31 @@ namespace NAudio_Spotify_Local
             {
                 _setVolumeDelegate(bunifuSlider2.Value);
             }
-            
-
-            if (bunifuSlider2.Value < 12)
-            {
-                if (_waveOutDevice.Volume < 12)
-                {
-                    btMute_Hight.Image = Properties.Resources.mute;
-                    _waveOutDevice.Volume = 0;
-                }
-            }
-            else if (bunifuSlider2.Value > 13 || bunifuSlider2.Value < 79)
-            {
-                btMute_Hight.Image = Properties.Resources.Medium_Volume;
-            }
-            else if (bunifuSlider2.Value > 80)
-            {
-                btMute_Hight.Image = Properties.Resources.High_Volume;
-            }
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
             MemoryManager.MemoryManager.ReleaseMemory();
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtSeach_TextChanged(object sender, EventArgs e)
+        {
+            var registrationsList = ListSong.Items.Cast<String>().ToList();
+            ListSong.BeginUpdate();
+            ListSong.Items.Clear();
+            foreach (string str in registrationsList)
+            {
+                if (str.Contains(txtSeach.Text))
+                {
+                    ListSong.Items.Add(str);
+                }
+            }
+            ListSong.EndUpdate();
         }
     }
 }
