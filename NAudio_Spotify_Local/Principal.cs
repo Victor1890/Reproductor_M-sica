@@ -395,21 +395,26 @@ namespace NAudio_Spotify_Local
                 TimeSpan currentTime = (_waveOutDevice.PlaybackState == PlaybackState.Stopped) ? TimeSpan.Zero : _audioFileReader.CurrentTime;
                 bunifuSlider1.Value = Math.Min(bunifuSlider1.MaximumValue, (int)(100 * currentTime.TotalSeconds / _audioFileReader.TotalTime.TotalSeconds));
                 l_time_inial.Text = string.Format("{0:00}:{1:00}", (int)currentTime.TotalMinutes, currentTime.Seconds);
+
+                if (_waveOutDevice.PlaybackState == PlaybackState.Stopped || _waveOutDevice.PlaybackState == PlaybackState.Paused)
+                {
+                    if (Pic_effects.Visible == true)
+                    {
+                        Pic_effects.Visible = false;
+                    }
+                }
+
+                if (bunifuSlider1.Value == bunifuSlider1.MaximumValue)
+                {
+                    PrevNextSong('+');
+                }
             }
             else
             {
                 bunifuSlider1.Value = 0;
             }
         }
-
-        private void bunifuSlider1_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (_audioFileReader != null)
-            {
-                _audioFileReader.CurrentTime = TimeSpan.FromSeconds(_audioFileReader.TotalTime.TotalSeconds * bunifuSlider1.Value / 100.0);
-            }
-        }
-
+        
         private void CloseWaveOut()
         {
             if (_waveOutDevice != null)
@@ -446,9 +451,9 @@ namespace NAudio_Spotify_Local
 
         private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
         {
-            if (bunifuSlider1.Value == bunifuSlider1.MaximumValue)
+            if (_audioFileReader != null)
             {
-                PrevNextSong('+');
+                _audioFileReader.CurrentTime = TimeSpan.FromSeconds(_audioFileReader.TotalTime.TotalSeconds * bunifuSlider1.Value / 100.0);
             }
         }
 

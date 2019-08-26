@@ -492,7 +492,6 @@
             this.bunifuSlider1.TabIndex = 1;
             this.bunifuSlider1.Value = 0;
             this.bunifuSlider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
-            this.bunifuSlider1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.bunifuSlider1_Scroll);
             // 
             // thumbnail2
             // 
