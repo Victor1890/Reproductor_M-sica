@@ -590,11 +590,11 @@
             this.bunifuSlider2.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
             this.bunifuSlider2.Location = new System.Drawing.Point(1144, 44);
             this.bunifuSlider2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuSlider2.MaximumValue = 20;
+            this.bunifuSlider2.MaximumValue = 10;
             this.bunifuSlider2.Name = "bunifuSlider2";
             this.bunifuSlider2.Size = new System.Drawing.Size(124, 35);
             this.bunifuSlider2.TabIndex = 2;
-            this.bunifuSlider2.Value = 10;
+            this.bunifuSlider2.Value = 1;
             this.bunifuSlider2.ValueChanged += new System.EventHandler(this.bunifuSlider2_ValueChanged);
             // 
             // bunifuSlider1
