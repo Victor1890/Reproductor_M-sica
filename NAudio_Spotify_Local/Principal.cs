@@ -188,7 +188,8 @@ namespace NAudio_Spotify_Local
 
             lBtrate.Text = file.Properties.AudioBitrate + "kbps";
             lSamplerate.Text = file.Properties.AudioSampleRate + "kHz";
-
+            lFormat.Text = Path.GetExtension(path).ToUpper();
+            
             items.Artist = file.Tag.FirstAlbumArtist;
             items.Song = file.Tag.Title;
 
@@ -500,6 +501,10 @@ namespace NAudio_Spotify_Local
             //    }
             //}
             //ListSong.EndUpdate();
+        }
+
+        private void P_Effect_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

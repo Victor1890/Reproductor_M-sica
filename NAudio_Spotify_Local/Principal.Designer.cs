@@ -432,6 +432,7 @@
             this.P_Effect.Name = "P_Effect";
             this.P_Effect.Size = new System.Drawing.Size(285, 123);
             this.P_Effect.TabIndex = 18;
+            this.P_Effect.Paint += new System.Windows.Forms.PaintEventHandler(this.P_Effect_Paint);
             // 
             // l_Album
             // 
