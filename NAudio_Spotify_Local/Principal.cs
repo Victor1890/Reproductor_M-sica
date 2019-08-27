@@ -182,8 +182,12 @@ namespace NAudio_Spotify_Local
             l_Artist_1.Text = file.Tag.FirstAlbumArtist;
             l_Song_2.Text = file.Tag.Title;
             l_Song_1.Text = file.Tag.Title;
+            l_Song2.Text = file.Tag.Title;
+            l_Album2.Text = file.Tag.FirstAlbumArtist;
             l_Album.Text = file.Tag.FirstAlbumArtist;
 
+            lBtrate.Text = file.Properties.AudioBitrate + "kbps";
+            lSamplerate.Text = file.Properties.AudioSampleRate + "kHz";
 
             items.Artist = file.Tag.FirstAlbumArtist;
             items.Song = file.Tag.Title;
