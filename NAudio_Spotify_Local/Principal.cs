@@ -180,7 +180,7 @@ namespace NAudio_Spotify_Local
             TagLib.File file = TagLib.File.Create(path);
 
             l_Artist_1.Text = file.Tag.FirstAlbumArtist;
-            l_Artist_2.Text = file.Tag.FirstAlbumArtist;
+            l_Song_2.Text = file.Tag.Title;
             l_Song_1.Text = file.Tag.Title;
             l_Album.Text = file.Tag.FirstAlbumArtist;
 
@@ -214,11 +214,11 @@ namespace NAudio_Spotify_Local
             }
 
 
-            if (l_Song_1.Text == "" || l_Artist_1.Text == "" || l_Artist_2.Text == "" || l_Album.Text == "")
+            if (l_Song_1.Text == "" || l_Artist_1.Text == "" || l_Song_2.Text == "" || l_Album.Text == "")
             {
                 l_Album.Text = "Desconocido";
                 l_Artist_1.Text = "Desconocido";
-                l_Artist_2.Text = "Desconocido";
+                l_Song_2.Text = "Desconocido";
                 l_Song_1.Text = "Desconocido";
             }
             //ListSong.Controls.Add(items);
@@ -445,7 +445,7 @@ namespace NAudio_Spotify_Local
         {
             l_Album.Text = string.Empty;
             l_Artist_1.Text = string.Empty;
-            l_Artist_2.Text = string.Empty;
+            l_Song_2.Text = string.Empty;
             l_Song_1.Text = string.Empty;
             l_time_final.Text = "0:00";
             l_time_inial.Text = "0:00";
