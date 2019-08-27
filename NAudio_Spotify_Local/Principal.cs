@@ -213,7 +213,15 @@ namespace NAudio_Spotify_Local
                 thumbnail2.Image = Properties.Resources.default_1;
             }
 
-            ListSong.Controls.Add(items);
+
+            if (l_Song_1.Text == "" || l_Artist_1.Text == "" || l_Artist_2.Text == "" || l_Album.Text == "")
+            {
+                l_Album.Text = "Desconocido";
+                l_Artist_1.Text = "Desconocido";
+                l_Artist_2.Text = "Desconocido";
+                l_Song_1.Text = "Desconocido";
+            }
+            //ListSong.Controls.Add(items);
             //Play song :P
             _waveOutDevice.Init(sampleProvider);
             _setVolumeDelegate(bunifuSlider2.Value);
@@ -399,10 +407,20 @@ namespace NAudio_Spotify_Local
                     }
                 }
 
+                if (_waveOutDevice.PlaybackState == PlaybackState.Stopped)
+                {
+                    if(P_Effect.AutoSize == true)
+                        P_Effect.AutoSize = false;
+                    else
+                        P_Effect.AutoSize = true;
+                }
+
                 if (bunifuSlider1.Value == bunifuSlider1.MaximumValue)
                 {
                     PrevNextSong('+');
                 }
+
+                P_Effect.AutoSize = true;
             }
             else
             {
@@ -463,11 +481,6 @@ namespace NAudio_Spotify_Local
         private void Principal_Load(object sender, EventArgs e)
         {
             MemoryManager.MemoryManager.ReleaseMemory();
-        }
-
-        private void btSearch_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtSeach_TextChanged(object sender, EventArgs e)
