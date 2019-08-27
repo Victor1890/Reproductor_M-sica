@@ -51,9 +51,6 @@
     <ApplicationIcon>Deadpool_96px.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bass.Net">
-      <HintPath>..\..\..\Referencia\Bass.Net.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\..\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
