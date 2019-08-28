@@ -66,7 +66,6 @@
             this.thumbnail2 = new System.Windows.Forms.PictureBox();
             this.btEqualizer = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMute_Hight = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bthuffle = new Bunifu.Framework.UI.BunifuImageButton();
             this.btRight = new Bunifu.Framework.UI.BunifuImageButton();
             this.btLeft = new Bunifu.Framework.UI.BunifuImageButton();
             this.btPlay = new Bunifu.Framework.UI.BunifuImageButton();
@@ -91,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btEqualizer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMute_Hight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bthuffle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPlay)).BeginInit();
@@ -152,7 +150,6 @@
             this.panel3.Controls.Add(this.P_Effect);
             this.panel3.Controls.Add(this.btEqualizer);
             this.panel3.Controls.Add(this.btMute_Hight);
-            this.panel3.Controls.Add(this.bthuffle);
             this.panel3.Controls.Add(this.btRight);
             this.panel3.Controls.Add(this.btLeft);
             this.panel3.Controls.Add(this.btPlay);
@@ -553,21 +550,6 @@
             this.btMute_Hight.Zoom = 10;
             this.btMute_Hight.Click += new System.EventHandler(this.btMute_Hight_Click);
             // 
-            // bthuffle
-            // 
-            this.bthuffle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bthuffle.BackColor = System.Drawing.Color.Transparent;
-            this.bthuffle.Image = global::NAudio_Spotify_Local.Properties.Resources.shuffle2;
-            this.bthuffle.ImageActive = null;
-            this.bthuffle.Location = new System.Drawing.Point(410, 45);
-            this.bthuffle.Name = "bthuffle";
-            this.bthuffle.Size = new System.Drawing.Size(40, 40);
-            this.bthuffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bthuffle.TabIndex = 15;
-            this.bthuffle.TabStop = false;
-            this.bthuffle.Zoom = 10;
-            this.bthuffle.Click += new System.EventHandler(this.bthuffle_Click);
-            // 
             // btRight
             // 
             this.btRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -689,7 +671,7 @@
             this.btGitHub.BackColor = System.Drawing.Color.Transparent;
             this.btGitHub.Image = global::NAudio_Spotify_Local.Properties.Resources.github_96px;
             this.btGitHub.ImageActive = null;
-            this.btGitHub.Location = new System.Drawing.Point(39, 738);
+            this.btGitHub.Location = new System.Drawing.Point(43, 740);
             this.btGitHub.Name = "btGitHub";
             this.btGitHub.Size = new System.Drawing.Size(30, 27);
             this.btGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -704,7 +686,7 @@
             this.btInstagram.BackColor = System.Drawing.Color.Transparent;
             this.btInstagram.Image = global::NAudio_Spotify_Local.Properties.Resources.instagram_96px;
             this.btInstagram.ImageActive = null;
-            this.btInstagram.Location = new System.Drawing.Point(3, 738);
+            this.btInstagram.Location = new System.Drawing.Point(7, 740);
             this.btInstagram.Name = "btInstagram";
             this.btInstagram.Size = new System.Drawing.Size(30, 27);
             this.btInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -844,7 +826,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btEqualizer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMute_Hight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bthuffle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPlay)).EndInit();
@@ -882,7 +863,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btPlay;
         private Bunifu.Framework.UI.BunifuImageButton btLeft;
         private Bunifu.Framework.UI.BunifuImageButton btRight;
-        private Bunifu.Framework.UI.BunifuImageButton bthuffle;
         private Bunifu.Framework.UI.BunifuImageButton btMute_Hight;
         private System.Windows.Forms.PictureBox thumbnail;
         private System.Windows.Forms.Panel panel4;
