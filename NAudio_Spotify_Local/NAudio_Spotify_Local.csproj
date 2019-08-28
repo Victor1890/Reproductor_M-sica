@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Deadpool_96px.ico" />
+    <None Include="Resources\shuffle2.png" />
     <None Include="Resources\equalizer.png" />
     <None Include="Resources\main.png" />
     <None Include="Resources\download.png" />

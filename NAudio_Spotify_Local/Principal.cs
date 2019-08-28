@@ -276,52 +276,72 @@ namespace NAudio_Spotify_Local
                 
         private void ListSong_DoubleClick(object sender, MouseEventArgs e)
         {
-            if (Pic_effects.Visible == false)
+            if (!_songFiles.Any())
             {
-                btPlay.Image = Properties.Resources.Play;
-                Pic_effects.Visible = true;
+                Pic_effects.Visible = false;
             }
             else
             {
-                btPlay.Image = Properties.Resources.Pause;
-                Pic_effects.Visible = false;
-            }
-
-            int index = ListSong.IndexFromPoint(e.Location);
-            _songIndex = ListSong.SelectedIndex;
-
-            if (index != ListBox.NoMatches)
-            {
-                //lblTitle.Text = ListSong.SelectedItem.ToString();
-
-                if (_waveOutDevice == null)
+                if (Pic_effects.Visible == false)
                 {
-                    PlaySong(_songIndex);
+                    btPlay.Image = Properties.Resources.Play;
+                    Pic_effects.Visible = true;
                 }
-                else if (_waveOutDevice != null)
+                else
                 {
-                    _waveOutDevice.Stop();
-                    PlaySong(_songIndex);
+                    //btPlay.Image = Properties.Resources.Pause;
+                    Pic_effects.Visible = true;
+                }
+
+                int index = ListSong.IndexFromPoint(e.Location);
+                _songIndex = ListSong.SelectedIndex;
+
+                if (index != ListBox.NoMatches)
+                {
+                    //lblTitle.Text = ListSong.SelectedItem.ToString();
+
+                    if (_waveOutDevice == null)
+                    {
+                        PlaySong(_songIndex);
+                    }
+                    else if (_waveOutDevice != null)
+                    {
+                        _waveOutDevice.Stop();
+                        PlaySong(_songIndex);
+                    }
                 }
             }
         }
 
-        private void btStop_Click(object sender, EventArgs e)
+        private void bthuffle_Click(object sender, EventArgs e)
         {
-            if (_waveOutDevice != null)
+            if (true)
             {
-                if (_waveOutDevice.PlaybackState == PlaybackState.Playing)
+                int rndIndex = rnd.Next(0, ListSong.Items.Count);
+
+                if (rndIndex == ListSong.SelectedIndex)
                 {
-                    if (Pic_effects.Visible == true)
-                    {
-                        btPlay.Image = Properties.Resources.Play;
-                        Pic_effects.Visible = false;
-                    }
-                    _waveOutDevice.Stop();
-                    ClearAll();
-                    ListSong.SelectedIndex = -1;
+                    rndIndex = rnd.Next(0, ListSong.Items.Count);
                 }
+
+                ListSong.SelectedIndex = rndIndex;
+                PlaySong(rndIndex);
             }
+
+            //if (_waveOutDevice != null)
+            //{
+            //    if (_waveOutDevice.PlaybackState == PlaybackState.Playing)
+            //    {
+            //        if (Pic_effects.Visible == true)
+            //        {
+            //            btPlay.Image = Properties.Resources.Play;
+            //            Pic_effects.Visible = false;
+            //        }
+            //        _waveOutDevice.Stop();
+            //        //ClearAll();
+            //        ListSong.SelectedIndex = -1;
+            //    }
+            //}
         }
 
         private void btRight_Click(object sender, EventArgs e)
@@ -342,23 +362,21 @@ namespace NAudio_Spotify_Local
             }
 
             _waveOutDevice.Stop();
-            
+
 
             //Shuffle
-            //if (chkShuffle.Checked)
-            //{
-            //    int rndIndex = rnd.Next(0, ListSong.Items.Count);
+            if (cShuffle.Checked)
+            {
+                int rndIndex = rnd.Next(0, ListSong.Items.Count);
 
-            //    if (rndIndex == ListSong.SelectedIndex)
-            //    {
-            //        rndIndex = rnd.Next(0, ListSong.Items.Count);
-            //    }
+                if (rndIndex == ListSong.SelectedIndex)
+                {
+                    rndIndex = rnd.Next(0, ListSong.Items.Count);
+                }
 
-            //    ListSong.SelectedIndex = rndIndex;
-            //    PlaySong(rndIndex);
-
-            //    return;
-            //}
+                ListSong.SelectedIndex = rndIndex;
+                PlaySong(rndIndex);
+            }
 
             //Change songs
             int songIndex;
@@ -448,10 +466,17 @@ namespace NAudio_Spotify_Local
 
         private void ClearAll()
         {
-            l_Album.Text = string.Empty;
-            l_Artist_1.Text = string.Empty;
-            l_Song_2.Text = string.Empty;
-            l_Song_1.Text = string.Empty;
+            l_Album.Visible = false;
+            l_Artist_1.Visible = false;
+            l_Song_2.Visible = false;
+            l_Song_1.Visible = false;
+            l_Song2.Visible = false;
+            l_Album2.Visible = false;
+            lSamplerate.Visible = false;
+            lBtrate.Visible = false;
+            lFormat.Visible = false;
+
+
             l_time_final.Text = "0:00";
             l_time_inial.Text = "0:00";
 
@@ -501,10 +526,6 @@ namespace NAudio_Spotify_Local
             //    }
             //}
             //ListSong.EndUpdate();
-        }
-
-        private void P_Effect_Paint(object sender, PaintEventArgs e)
-        {
         }
     }
 }
