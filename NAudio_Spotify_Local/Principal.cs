@@ -365,18 +365,7 @@ namespace NAudio_Spotify_Local
 
 
             //Shuffle
-            if (cShuffle.Checked)
-            {
-                int rndIndex = rnd.Next(0, ListSong.Items.Count);
-
-                if (rndIndex == ListSong.SelectedIndex)
-                {
-                    rndIndex = rnd.Next(0, ListSong.Items.Count);
-                }
-
-                ListSong.SelectedIndex = rndIndex;
-                PlaySong(rndIndex);
-            }
+            Shuffle();
 
             //Change songs
             int songIndex;
@@ -412,6 +401,22 @@ namespace NAudio_Spotify_Local
                 return;
             }
             PlaySong(songIndex);
+        }
+
+        private void Shuffle()
+        {
+            if (cShuffle.Checked)
+            {
+                int rndIndex = rnd.Next(0, ListSong.Items.Count - 1);
+
+                if (rndIndex == ListSong.SelectedIndex)
+                {
+                    rndIndex = rnd.Next(0, ListSong.Items.Count);
+                }
+
+                ListSong.SelectedIndex = rndIndex;
+                PlaySong(rndIndex);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
