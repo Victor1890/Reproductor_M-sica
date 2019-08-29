@@ -73,7 +73,7 @@
             this.l_Song2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Album2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.thumbnail = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.P_Effect = new System.Windows.Forms.Button();
             this.l_Album = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Song_2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.thumbnail2 = new System.Windows.Forms.PictureBox();
@@ -335,7 +335,7 @@
             this.panel3.Controls.Add(this.btEqualizer);
             this.panel3.Controls.Add(this.thumbnail2);
             this.panel3.Controls.Add(this.btMute_Hight);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.P_Effect);
             this.panel3.Controls.Add(this.btRight);
             this.panel3.Controls.Add(this.btLeft);
             this.panel3.Controls.Add(this.btPlay);
@@ -748,16 +748,16 @@
             this.thumbnail.TabIndex = 5;
             this.thumbnail.TabStop = false;
             // 
-            // button1
+            // P_Effect
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(248, 117);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
+            this.P_Effect.BackColor = System.Drawing.Color.Transparent;
+            this.P_Effect.Dock = System.Windows.Forms.DockStyle.Left;
+            this.P_Effect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.P_Effect.Location = new System.Drawing.Point(0, 0);
+            this.P_Effect.Name = "P_Effect";
+            this.P_Effect.Size = new System.Drawing.Size(248, 117);
+            this.P_Effect.TabIndex = 6;
+            this.P_Effect.UseVisualStyleBackColor = false;
             // 
             // l_Album
             // 
@@ -785,6 +785,7 @@
             // 
             // thumbnail2
             // 
+            this.thumbnail2.BackColor = System.Drawing.Color.Transparent;
             this.thumbnail2.Location = new System.Drawing.Point(1, 0);
             this.thumbnail2.Name = "thumbnail2";
             this.thumbnail2.Size = new System.Drawing.Size(125, 114);
@@ -881,7 +882,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lSamplerate;
         private Bunifu.Framework.UI.BunifuCustomLabel lBtrate;
         private System.Windows.Forms.CheckBox cShuffle;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button P_Effect;
         private Bunifu.Framework.UI.BunifuCustomLabel l_Album;
         private Bunifu.Framework.UI.BunifuCustomLabel l_Song_2;
         private System.Windows.Forms.PictureBox thumbnail2;
