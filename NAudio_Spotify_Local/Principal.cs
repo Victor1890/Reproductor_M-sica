@@ -19,6 +19,7 @@ namespace NAudio_Spotify_Local
         public Principal()
         {
             InitializeComponent();
+            MemoryManager.MemoryManager.ReleaseMemory();
         }
         private Classes.AudioPlayer Music = new Classes.AudioPlayer();
         private Play_Items items = new Play_Items();
@@ -100,8 +101,7 @@ namespace NAudio_Spotify_Local
 
             if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
             {
-                string extensions = "*.mp3";
-                var paths = Directory.GetFiles(folderBrowser.SelectedPath, extensions, SearchOption.AllDirectories);
+                var paths = Directory.GetFiles(folderBrowser.SelectedPath, "*.mp3", SearchOption.AllDirectories);
 
                 foreach (string path in paths)
                 {
@@ -111,6 +111,28 @@ namespace NAudio_Spotify_Local
                     }
                 }
             }
+        }
+
+        private void AddSongsToLists(string song)
+        {
+            string name;
+            TagLib.File file;
+
+            file = TagLib.File.Create(song);
+
+            try
+            {
+                name = string.Format("{0} - {1}", file.Tag.Performers[0], file.Tag.Title);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                ex.ToString();
+                name = Path.GetFileNameWithoutExtension(song);
+            }
+
+            _songFiles.Add(song);
+
+            ListSong.Items.Add(name);
         }
 
         private void btPlay_Click(object sender, EventArgs e)
@@ -126,14 +148,14 @@ namespace NAudio_Spotify_Local
                 if (_waveOutDevice.PlaybackState == PlaybackState.Playing)
                 {
                     _waveOutDevice.Pause();
-                    btPlay.Image = Properties.Resources.Pause;
+                    btPlay.Image = Properties.Resources.Play;
                     Pic_effects.Visible = false;
                     return;
                 }
                 else if (_waveOutDevice.PlaybackState == PlaybackState.Paused)
                 {
                     _waveOutDevice.Play();
-                    btPlay.Image = Properties.Resources.Play;
+                    btPlay.Image = Properties.Resources.Pause;
                     Pic_effects.Visible = true;
                     return;
                 }
@@ -194,7 +216,6 @@ namespace NAudio_Spotify_Local
             items.Song = file.Tag.Title;
 
             
-
             //Set artwork
             TagLib.IPicture pic;
             MemoryStream stream;
@@ -251,28 +272,6 @@ namespace NAudio_Spotify_Local
 
             return postVolumeMeter;
         }
-
-        private void AddSongsToLists(string song)
-        {
-            string name;
-            TagLib.File file;
-
-            file = TagLib.File.Create(song);
-
-            try
-            {
-                name = string.Format("{0} - {1}", file.Tag.Performers[0], file.Tag.Title);
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                ex.ToString();
-                name = Path.GetFileNameWithoutExtension(song);
-            }
-
-            _songFiles.Add(song);
-
-            ListSong.Items.Add(name);
-        }
                 
         private void ListSong_DoubleClick(object sender, MouseEventArgs e)
         {
@@ -295,6 +294,7 @@ namespace NAudio_Spotify_Local
 
                 int index = ListSong.IndexFromPoint(e.Location);
                 _songIndex = ListSong.SelectedIndex;
+                
 
                 if (index != ListBox.NoMatches)
                 {
@@ -403,6 +403,7 @@ namespace NAudio_Spotify_Local
             PlaySong(songIndex);
         }
 
+        //Shuffle
         private void Shuffle()
         {
             if (cShuffle.Checked)
@@ -437,10 +438,10 @@ namespace NAudio_Spotify_Local
 
                 if (_waveOutDevice.PlaybackState == PlaybackState.Stopped)
                 {
-                    if(P_Effect.AutoSize == true)
-                        P_Effect.AutoSize = false;
+                    if(panel6.AutoSize == true)
+                        panel6.AutoSize = false;
                     else
-                        P_Effect.AutoSize = true;
+                        panel6.AutoSize = true;
                 }
 
                 if (bunifuSlider1.Value == bunifuSlider1.MaximumValue)
@@ -448,7 +449,7 @@ namespace NAudio_Spotify_Local
                     PrevNextSong('+');
                 }
 
-                P_Effect.AutoSize = true;
+                panel6.AutoSize = true;
             }
             else
             {
@@ -511,11 +512,6 @@ namespace NAudio_Spotify_Local
             {
                 _setVolumeDelegate(bunifuSlider2.Value);
             }
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-            MemoryManager.MemoryManager.ReleaseMemory();
         }
 
         private void txtSeach_TextChanged(object sender, EventArgs e)

@@ -73,10 +73,10 @@
             this.l_Song2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Album2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.thumbnail = new System.Windows.Forms.PictureBox();
-            this.P_Effect = new System.Windows.Forms.Button();
             this.l_Album = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Song_2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.thumbnail2 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).BeginInit();
@@ -95,6 +95,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail2)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -329,13 +330,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.panel3.Controls.Add(this.l_Album);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.cShuffle);
-            this.panel3.Controls.Add(this.l_Song_2);
             this.panel3.Controls.Add(this.btEqualizer);
-            this.panel3.Controls.Add(this.thumbnail2);
             this.panel3.Controls.Add(this.btMute_Hight);
-            this.panel3.Controls.Add(this.P_Effect);
             this.panel3.Controls.Add(this.btRight);
             this.panel3.Controls.Add(this.btLeft);
             this.panel3.Controls.Add(this.btPlay);
@@ -355,7 +353,7 @@
             this.cShuffle.BackgroundImage = global::NAudio_Spotify_Local.Properties.Resources.shuffle2;
             this.cShuffle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cShuffle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cShuffle.Location = new System.Drawing.Point(629, 25);
+            this.cShuffle.Location = new System.Drawing.Point(618, 24);
             this.cShuffle.Name = "cShuffle";
             this.cShuffle.Size = new System.Drawing.Size(40, 40);
             this.cShuffle.TabIndex = 19;
@@ -367,7 +365,7 @@
             this.btEqualizer.BackColor = System.Drawing.Color.Transparent;
             this.btEqualizer.Image = global::NAudio_Spotify_Local.Properties.Resources.equalizer;
             this.btEqualizer.ImageActive = null;
-            this.btEqualizer.Location = new System.Drawing.Point(857, 25);
+            this.btEqualizer.Location = new System.Drawing.Point(846, 24);
             this.btEqualizer.Name = "btEqualizer";
             this.btEqualizer.Size = new System.Drawing.Size(40, 40);
             this.btEqualizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -381,7 +379,7 @@
             this.btMute_Hight.BackColor = System.Drawing.Color.Transparent;
             this.btMute_Hight.Image = global::NAudio_Spotify_Local.Properties.Resources.mute;
             this.btMute_Hight.ImageActive = null;
-            this.btMute_Hight.Location = new System.Drawing.Point(1136, 13);
+            this.btMute_Hight.Location = new System.Drawing.Point(1122, 37);
             this.btMute_Hight.Name = "btMute_Hight";
             this.btMute_Hight.Size = new System.Drawing.Size(40, 40);
             this.btMute_Hight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -396,7 +394,7 @@
             this.btRight.BackColor = System.Drawing.Color.Transparent;
             this.btRight.Image = global::NAudio_Spotify_Local.Properties.Resources.more;
             this.btRight.ImageActive = null;
-            this.btRight.Location = new System.Drawing.Point(796, 25);
+            this.btRight.Location = new System.Drawing.Point(785, 24);
             this.btRight.Name = "btRight";
             this.btRight.Size = new System.Drawing.Size(40, 40);
             this.btRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -411,7 +409,7 @@
             this.btLeft.BackColor = System.Drawing.Color.Transparent;
             this.btLeft.Image = global::NAudio_Spotify_Local.Properties.Resources.chevron;
             this.btLeft.ImageActive = null;
-            this.btLeft.Location = new System.Drawing.Point(684, 25);
+            this.btLeft.Location = new System.Drawing.Point(673, 24);
             this.btLeft.Name = "btLeft";
             this.btLeft.Size = new System.Drawing.Size(40, 40);
             this.btLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -426,7 +424,7 @@
             this.btPlay.BackColor = System.Drawing.Color.Transparent;
             this.btPlay.Image = global::NAudio_Spotify_Local.Properties.Resources.Play;
             this.btPlay.ImageActive = null;
-            this.btPlay.Location = new System.Drawing.Point(730, 16);
+            this.btPlay.Location = new System.Drawing.Point(719, 15);
             this.btPlay.Name = "btPlay";
             this.btPlay.Size = new System.Drawing.Size(60, 60);
             this.btPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -467,7 +465,7 @@
             this.bunifuSlider2.BackgroudColor = System.Drawing.Color.DarkGray;
             this.bunifuSlider2.BorderRadius = 3;
             this.bunifuSlider2.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.bunifuSlider2.Location = new System.Drawing.Point(1181, 16);
+            this.bunifuSlider2.Location = new System.Drawing.Point(1167, 40);
             this.bunifuSlider2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSlider2.MaximumValue = 5;
             this.bunifuSlider2.Name = "bunifuSlider2";
@@ -605,10 +603,11 @@
             this.ListSong.ForeColor = System.Drawing.Color.White;
             this.ListSong.FormattingEnabled = true;
             this.ListSong.ItemHeight = 19;
-            this.ListSong.Location = new System.Drawing.Point(0, 0);
+            this.ListSong.Location = new System.Drawing.Point(10, 4);
             this.ListSong.Name = "ListSong";
-            this.ListSong.Size = new System.Drawing.Size(590, 380);
+            this.ListSong.Size = new System.Drawing.Size(888, 399);
             this.ListSong.TabIndex = 0;
+            this.ListSong.UseTabStops = false;
             this.ListSong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListSong_DoubleClick);
             // 
             // timer1
@@ -741,23 +740,12 @@
             // 
             // thumbnail
             // 
-            this.thumbnail.Location = new System.Drawing.Point(91, 6);
+            this.thumbnail.Location = new System.Drawing.Point(89, 6);
             this.thumbnail.Name = "thumbnail";
-            this.thumbnail.Size = new System.Drawing.Size(150, 160);
+            this.thumbnail.Size = new System.Drawing.Size(160, 160);
             this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail.TabIndex = 5;
             this.thumbnail.TabStop = false;
-            // 
-            // P_Effect
-            // 
-            this.P_Effect.BackColor = System.Drawing.Color.Transparent;
-            this.P_Effect.Dock = System.Windows.Forms.DockStyle.Left;
-            this.P_Effect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.P_Effect.Location = new System.Drawing.Point(0, 0);
-            this.P_Effect.Name = "P_Effect";
-            this.P_Effect.Size = new System.Drawing.Size(248, 117);
-            this.P_Effect.TabIndex = 6;
-            this.P_Effect.UseVisualStyleBackColor = false;
             // 
             // l_Album
             // 
@@ -765,7 +753,7 @@
             this.l_Album.BackColor = System.Drawing.Color.Transparent;
             this.l_Album.Font = new System.Drawing.Font("Century Gothic", 9.8F);
             this.l_Album.ForeColor = System.Drawing.Color.Gray;
-            this.l_Album.Location = new System.Drawing.Point(142, 68);
+            this.l_Album.Location = new System.Drawing.Point(149, 56);
             this.l_Album.Name = "l_Album";
             this.l_Album.Size = new System.Drawing.Size(63, 21);
             this.l_Album.TabIndex = 14;
@@ -777,7 +765,7 @@
             this.l_Song_2.BackColor = System.Drawing.Color.Transparent;
             this.l_Song_2.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.l_Song_2.ForeColor = System.Drawing.Color.White;
-            this.l_Song_2.Location = new System.Drawing.Point(142, 31);
+            this.l_Song_2.Location = new System.Drawing.Point(149, 30);
             this.l_Song_2.Name = "l_Song_2";
             this.l_Song_2.Size = new System.Drawing.Size(71, 23);
             this.l_Song_2.TabIndex = 13;
@@ -785,13 +773,24 @@
             // 
             // thumbnail2
             // 
-            this.thumbnail2.BackColor = System.Drawing.Color.Transparent;
-            this.thumbnail2.Location = new System.Drawing.Point(1, 0);
+            this.thumbnail2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.thumbnail2.Location = new System.Drawing.Point(0, 0);
             this.thumbnail2.Name = "thumbnail2";
-            this.thumbnail2.Size = new System.Drawing.Size(125, 114);
+            this.thumbnail2.Size = new System.Drawing.Size(125, 117);
             this.thumbnail2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail2.TabIndex = 12;
             this.thumbnail2.TabStop = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.thumbnail2);
+            this.panel6.Controls.Add(this.l_Album);
+            this.panel6.Controls.Add(this.l_Song_2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(248, 117);
+            this.panel6.TabIndex = 20;
             // 
             // Principal
             // 
@@ -810,7 +809,6 @@
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
-            this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).EndInit();
@@ -833,6 +831,8 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail2)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -882,10 +882,10 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lSamplerate;
         private Bunifu.Framework.UI.BunifuCustomLabel lBtrate;
         private System.Windows.Forms.CheckBox cShuffle;
-        private System.Windows.Forms.Button P_Effect;
         private Bunifu.Framework.UI.BunifuCustomLabel l_Album;
         private Bunifu.Framework.UI.BunifuCustomLabel l_Song_2;
         private System.Windows.Forms.PictureBox thumbnail2;
+        private System.Windows.Forms.Panel panel6;
     }
 }
 
