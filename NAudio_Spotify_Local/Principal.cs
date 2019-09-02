@@ -1,6 +1,6 @@
-﻿using NAudio.Wave;
+﻿using System;
+using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +33,7 @@ namespace NAudio_Spotify_Local
         private int _songIndex;
         private Action<float> _setVolumeDelegate;
         private string _lastPath;
-        private const string _supportedExtentions = "*.wav;*.aiff;*.mp3;*.aac";
+        //private const string _supportedExtentions = "*.wav;*.aiff;*.mp3;*.aac";
 
 
         //Cosas
@@ -194,8 +194,9 @@ namespace NAudio_Spotify_Local
             {
                 path = _songFiles.ElementAt(songIndex);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ex.ToString();
                 path = _songFiles.First();
             }
 
@@ -248,6 +249,18 @@ namespace NAudio_Spotify_Local
                 l_Song_1.Text = "Desconocido";
             }
             //ListSong.Controls.Add(items);
+
+            //Visible Date
+            l_Album.Visible = true;
+            l_Album2.Visible = true;
+            lBtrate.Visible = true;
+            lSamplerate.Visible = true;
+            lFormat.Visible = true;
+            l_Artist_1.Visible = true;
+            l_Song_1.Visible = true;
+            l_Song_2.Visible = true;
+            l_Song2.Visible = true;
+
             //Play song :P
             _waveOutDevice.Init(sampleProvider);
             _setVolumeDelegate(bunifuSlider2.Value);
@@ -420,6 +433,7 @@ namespace NAudio_Spotify_Local
             }
         }
 
+        //Timer
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (_waveOutDevice != null && _audioFileReader != null)
@@ -449,6 +463,7 @@ namespace NAudio_Spotify_Local
                     PrevNextSong('+');
                 }
 
+                panel5.AutoSize = true;
                 panel6.AutoSize = true;
             }
             else
@@ -503,14 +518,6 @@ namespace NAudio_Spotify_Local
             if (_audioFileReader != null)
             {
                 _audioFileReader.CurrentTime = TimeSpan.FromSeconds(_audioFileReader.TotalTime.TotalSeconds * bunifuSlider1.Value / 100.0);
-            }
-        }
-
-        private void btMute_Hight_Click(object sender, EventArgs e)
-        {
-            if (_setVolumeDelegate != null)
-            {
-                _setVolumeDelegate(bunifuSlider2.Value);
             }
         }
 
