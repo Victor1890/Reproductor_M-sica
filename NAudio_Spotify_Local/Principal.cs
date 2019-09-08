@@ -1,6 +1,4 @@
 ﻿using System;
-using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 
 
 namespace NAudio_Spotify_Local
@@ -21,7 +21,6 @@ namespace NAudio_Spotify_Local
             InitializeComponent();
             MemoryManager.MemoryManager.ReleaseMemory();
         }
-        private Classes.AudioPlayer Music = new Classes.AudioPlayer();
         private Play_Items items = new Play_Items();
 
 
@@ -419,9 +418,9 @@ namespace NAudio_Spotify_Local
         //Shuffle
         private void Shuffle()
         {
-            if (cShuffle.Checked)
+            if (cShuffle.Checked == true)
             {
-                int rndIndex = rnd.Next(0, ListSong.Items.Count - 1);
+                int rndIndex = rnd.Next(0, ListSong.Items.Count + 1);
 
                 if (rndIndex == ListSong.SelectedIndex)
                 {

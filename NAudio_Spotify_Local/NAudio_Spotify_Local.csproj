@@ -95,6 +95,12 @@
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Music_Download.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Music_Download.Designer.cs">
+      <DependentUpon>Music_Download.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Play_Items.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Music_Download.resx">
+      <DependentUpon>Music_Download.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Play_Items.resx">
       <DependentUpon>Play_Items.cs</DependentUpon>

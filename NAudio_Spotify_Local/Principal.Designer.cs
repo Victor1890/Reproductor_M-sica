@@ -363,7 +363,7 @@
             this.cShuffle.BackgroundImage = global::NAudio_Spotify_Local.Properties.Resources.shuffle2;
             this.cShuffle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cShuffle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cShuffle.Location = new System.Drawing.Point(618, 24);
+            this.cShuffle.Location = new System.Drawing.Point(662, 30);
             this.cShuffle.Name = "cShuffle";
             this.cShuffle.Size = new System.Drawing.Size(40, 40);
             this.cShuffle.TabIndex = 19;
@@ -375,7 +375,7 @@
             this.btEqualizer.BackColor = System.Drawing.Color.Transparent;
             this.btEqualizer.Image = global::NAudio_Spotify_Local.Properties.Resources.equalizer;
             this.btEqualizer.ImageActive = null;
-            this.btEqualizer.Location = new System.Drawing.Point(846, 24);
+            this.btEqualizer.Location = new System.Drawing.Point(890, 30);
             this.btEqualizer.Name = "btEqualizer";
             this.btEqualizer.Size = new System.Drawing.Size(40, 40);
             this.btEqualizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -403,7 +403,7 @@
             this.btRight.BackColor = System.Drawing.Color.Transparent;
             this.btRight.Image = global::NAudio_Spotify_Local.Properties.Resources.more;
             this.btRight.ImageActive = null;
-            this.btRight.Location = new System.Drawing.Point(785, 24);
+            this.btRight.Location = new System.Drawing.Point(829, 30);
             this.btRight.Name = "btRight";
             this.btRight.Size = new System.Drawing.Size(40, 40);
             this.btRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -418,7 +418,7 @@
             this.btLeft.BackColor = System.Drawing.Color.Transparent;
             this.btLeft.Image = global::NAudio_Spotify_Local.Properties.Resources.chevron;
             this.btLeft.ImageActive = null;
-            this.btLeft.Location = new System.Drawing.Point(673, 24);
+            this.btLeft.Location = new System.Drawing.Point(717, 30);
             this.btLeft.Name = "btLeft";
             this.btLeft.Size = new System.Drawing.Size(40, 40);
             this.btLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -433,7 +433,7 @@
             this.btPlay.BackColor = System.Drawing.Color.Transparent;
             this.btPlay.Image = global::NAudio_Spotify_Local.Properties.Resources.Play;
             this.btPlay.ImageActive = null;
-            this.btPlay.Location = new System.Drawing.Point(719, 15);
+            this.btPlay.Location = new System.Drawing.Point(763, 21);
             this.btPlay.Name = "btPlay";
             this.btPlay.Size = new System.Drawing.Size(60, 60);
             this.btPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -461,7 +461,7 @@
             this.l_time_inial.BackColor = System.Drawing.Color.Transparent;
             this.l_time_inial.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.l_time_inial.ForeColor = System.Drawing.Color.White;
-            this.l_time_inial.Location = new System.Drawing.Point(476, 84);
+            this.l_time_inial.Location = new System.Drawing.Point(513, 81);
             this.l_time_inial.Name = "l_time_inial";
             this.l_time_inial.Size = new System.Drawing.Size(42, 21);
             this.l_time_inial.TabIndex = 6;
@@ -491,11 +491,11 @@
             this.bunifuSlider1.BackgroudColor = System.Drawing.Color.Silver;
             this.bunifuSlider1.BorderRadius = 5;
             this.bunifuSlider1.IndicatorColor = System.Drawing.Color.Maroon;
-            this.bunifuSlider1.Location = new System.Drawing.Point(534, 79);
+            this.bunifuSlider1.Location = new System.Drawing.Point(572, 79);
             this.bunifuSlider1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSlider1.MaximumValue = 100;
             this.bunifuSlider1.Name = "bunifuSlider1";
-            this.bunifuSlider1.Size = new System.Drawing.Size(445, 35);
+            this.bunifuSlider1.Size = new System.Drawing.Size(407, 35);
             this.bunifuSlider1.TabIndex = 1;
             this.bunifuSlider1.Value = 0;
             this.bunifuSlider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
@@ -614,9 +614,9 @@
             this.ListSong.ForeColor = System.Drawing.Color.White;
             this.ListSong.FormattingEnabled = true;
             this.ListSong.ItemHeight = 19;
-            this.ListSong.Location = new System.Drawing.Point(10, 6);
+            this.ListSong.Location = new System.Drawing.Point(5, 6);
             this.ListSong.Name = "ListSong";
-            this.ListSong.Size = new System.Drawing.Size(815, 399);
+            this.ListSong.Size = new System.Drawing.Size(825, 399);
             this.ListSong.TabIndex = 0;
             this.ListSong.UseTabStops = false;
             this.ListSong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListSong_DoubleClick);
@@ -651,7 +651,7 @@
             this.lFormat.BackColor = System.Drawing.Color.Transparent;
             this.lFormat.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.lFormat.ForeColor = System.Drawing.Color.DarkGray;
-            this.lFormat.Location = new System.Drawing.Point(105, 341);
+            this.lFormat.Location = new System.Drawing.Point(105, 346);
             this.lFormat.Name = "lFormat";
             this.lFormat.Size = new System.Drawing.Size(79, 23);
             this.lFormat.TabIndex = 18;
@@ -665,7 +665,7 @@
             this.lSamplerate.BackColor = System.Drawing.Color.Transparent;
             this.lSamplerate.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.lSamplerate.ForeColor = System.Drawing.Color.DarkGray;
-            this.lSamplerate.Location = new System.Drawing.Point(148, 302);
+            this.lSamplerate.Location = new System.Drawing.Point(148, 307);
             this.lSamplerate.Name = "lSamplerate";
             this.lSamplerate.Size = new System.Drawing.Size(125, 23);
             this.lSamplerate.TabIndex = 17;
@@ -679,7 +679,7 @@
             this.lBtrate.BackColor = System.Drawing.Color.Transparent;
             this.lBtrate.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.lBtrate.ForeColor = System.Drawing.Color.DarkGray;
-            this.lBtrate.Location = new System.Drawing.Point(97, 262);
+            this.lBtrate.Location = new System.Drawing.Point(97, 267);
             this.lBtrate.Name = "lBtrate";
             this.lBtrate.Size = new System.Drawing.Size(71, 23);
             this.lBtrate.TabIndex = 16;
@@ -693,7 +693,7 @@
             this.lforma.BackColor = System.Drawing.Color.Transparent;
             this.lforma.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.lforma.ForeColor = System.Drawing.Color.White;
-            this.lforma.Location = new System.Drawing.Point(18, 341);
+            this.lforma.Location = new System.Drawing.Point(18, 346);
             this.lforma.Name = "lforma";
             this.lforma.Size = new System.Drawing.Size(79, 23);
             this.lforma.TabIndex = 15;
@@ -706,7 +706,7 @@
             this.lsample.BackColor = System.Drawing.Color.Transparent;
             this.lsample.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.lsample.ForeColor = System.Drawing.Color.White;
-            this.lsample.Location = new System.Drawing.Point(17, 302);
+            this.lsample.Location = new System.Drawing.Point(17, 307);
             this.lsample.Name = "lsample";
             this.lsample.Size = new System.Drawing.Size(125, 23);
             this.lsample.TabIndex = 14;
@@ -719,7 +719,7 @@
             this.lbitrate.BackColor = System.Drawing.Color.Transparent;
             this.lbitrate.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.lbitrate.ForeColor = System.Drawing.Color.White;
-            this.lbitrate.Location = new System.Drawing.Point(18, 262);
+            this.lbitrate.Location = new System.Drawing.Point(18, 267);
             this.lbitrate.Name = "lbitrate";
             this.lbitrate.Size = new System.Drawing.Size(71, 23);
             this.lbitrate.TabIndex = 13;
@@ -732,7 +732,7 @@
             this.l_Song2.BackColor = System.Drawing.Color.Transparent;
             this.l_Song2.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.l_Song2.ForeColor = System.Drawing.Color.White;
-            this.l_Song2.Location = new System.Drawing.Point(11, 206);
+            this.l_Song2.Location = new System.Drawing.Point(11, 211);
             this.l_Song2.Name = "l_Song2";
             this.l_Song2.Size = new System.Drawing.Size(266, 23);
             this.l_Song2.TabIndex = 12;
@@ -746,7 +746,7 @@
             this.l_Album2.BackColor = System.Drawing.Color.Transparent;
             this.l_Album2.Font = new System.Drawing.Font("Century Gothic", 11.8F);
             this.l_Album2.ForeColor = System.Drawing.Color.DarkGray;
-            this.l_Album2.Location = new System.Drawing.Point(12, 181);
+            this.l_Album2.Location = new System.Drawing.Point(12, 185);
             this.l_Album2.Name = "l_Album2";
             this.l_Album2.Size = new System.Drawing.Size(265, 23);
             this.l_Album2.TabIndex = 11;
