@@ -76,6 +76,7 @@
             this.l_Song2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.l_Album2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.thumbnail = new System.Windows.Forms.PictureBox();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btGitHub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btInstagram)).BeginInit();
@@ -511,6 +512,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.elementHost1);
             this.panel2.Controls.Add(this.Pic_effects);
             this.panel2.Controls.Add(this.l_Artist_1);
             this.panel2.Controls.Add(this.l_Song_1);
@@ -610,13 +612,14 @@
             // 
             this.ListSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
             this.ListSong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListSong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListSong.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListSong.ForeColor = System.Drawing.Color.White;
             this.ListSong.FormattingEnabled = true;
             this.ListSong.ItemHeight = 19;
-            this.ListSong.Location = new System.Drawing.Point(5, 6);
+            this.ListSong.Location = new System.Drawing.Point(0, 0);
             this.ListSong.Name = "ListSong";
-            this.ListSong.Size = new System.Drawing.Size(825, 399);
+            this.ListSong.Size = new System.Drawing.Size(841, 410);
             this.ListSong.TabIndex = 0;
             this.ListSong.UseTabStops = false;
             this.ListSong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListSong_DoubleClick);
@@ -763,6 +766,15 @@
             this.thumbnail.TabIndex = 5;
             this.thumbnail.TabStop = false;
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(606, 73);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(200, 100);
+            this.elementHost1.TabIndex = 6;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = null;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -856,6 +868,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel l_Song_2;
         private System.Windows.Forms.PictureBox thumbnail2;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
     }
 }
 

@@ -95,6 +95,9 @@
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Datos_Music.xaml.cs">
+      <DependentUpon>Datos_Music.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Music_Download.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Datos_Music.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

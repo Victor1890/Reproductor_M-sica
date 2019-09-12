@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="NAudio_Spotify_Local.Views.Datos_Music"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NAudio_Spotify_Local.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="440" d:DesignWidth="410">
+    <Grid>
+        <StackPanel Background="#0E0E0E">
+            <Image Width="160" Height="160" x:Name="pic_Image" Margin="40"/>
+            <Label x:Name="l_Album2" Content="Album:" Width="390" Height="33" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontFamily="Century Gothic" FontSize="01,8" Margin="10,-45,9.6,-45" Foreground="White"></Label>
+            <Label x:Name="l_Song2" Content="Name:" Width="390" Height="31" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontFamily="Century Gothic" FontSize="01,8" Margin="10,15,9.6,15" Foreground="White"></Label>
+            <Label x:Name="lbitrate" Content="Bitrate:" Width="390" Height="31" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontFamily="Century Gothic" FontSize="01,8" Margin="0" Foreground="White"></Label>
+            <Label x:Name="lsample" Content="Samplerate:" Width="390" Height="31" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontFamily="Century Gothic" FontSize="01,8" Margin="0" Foreground="White"></Label>
+            <Label x:Name="lforma" Content="Format:" Width="390" Height="31" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontFamily="Century Gothic" FontSize="01,8" Margin="0" Foreground="White"></Label>
+        </StackPanel>
+    </Grid>
+</UserControl>

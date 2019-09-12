@@ -20,7 +20,11 @@ namespace NAudio_Spotify_Local
         {
             InitializeComponent();
             MemoryManager.MemoryManager.ReleaseMemory();
+
+            elementHost1.
         }
+
+        private Views.Datos_Music datos = new Views.Datos_Music();
         private Play_Items items = new Play_Items();
 
 
@@ -377,7 +381,7 @@ namespace NAudio_Spotify_Local
 
 
             //Shuffle
-            Shuffle();
+            //Shuffle();
 
             //Change songs
             int songIndex;
