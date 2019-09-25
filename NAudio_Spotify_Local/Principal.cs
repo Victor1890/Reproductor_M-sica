@@ -19,12 +19,8 @@ namespace NAudio_Spotify_Local
         public Principal()
         {
             InitializeComponent();
-            MemoryManager.MemoryManager.ReleaseMemory();
-
-            elementHost1.
         }
 
-        private Views.Datos_Music datos = new Views.Datos_Music();
         private Play_Items items = new Play_Items();
 
 
@@ -75,15 +71,15 @@ namespace NAudio_Spotify_Local
             thumbnail2.Image = ((Play_Items)sender).Thumbnail;
             
             //Effecto de audio
-            if (Pic_effects.Visible == false)
+            if (Effects.Visible == false)
             {
                 btPlay.Image = Properties.Resources.Pause;
-                Pic_effects.Visible = true;
+                Effects.Visible = true;
             }
             else
             {
                 btPlay.Image = Properties.Resources.Play;
-                Pic_effects.Visible = false;
+                Effects.Visible = false;
             }
         }
 
@@ -91,7 +87,7 @@ namespace NAudio_Spotify_Local
         {
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
             folderBrowser.ShowNewFolderButton = false;
-
+                
             try
             {
                 folderBrowser.SelectedPath = _lastPath;
@@ -101,19 +97,35 @@ namespace NAudio_Spotify_Local
                 ex.ToString();
                 folderBrowser.RootFolder = Environment.SpecialFolder.MyComputer;
             }
-
-            if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
+            
+            
+            if (string.IsNullOrEmpty(folderBrowser.SelectedPath))
             {
-                var paths = Directory.GetFiles(folderBrowser.SelectedPath, "*.mp3", SearchOption.AllDirectories);
-
-                foreach (string path in paths)
+                if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
                 {
-                    if (!_songFiles.Contains(path))
-                    {
-                        AddSongsToLists(path);
-                    }
+                    var path = folderBrowser.SelectedPath;
+
+                    //Properties.Settings.Default["Path_Local"] = path;
+                    //Properties.Settings.Default.Save();
+                    
+
+                    LocalDirectory(path);
                 }
             }
+        }
+
+        private string LocalDirectory(string directory)
+        {
+            string[] paths = Directory.GetFiles(directory, "*.mp3", SearchOption.AllDirectories);
+
+            foreach (string path in paths)
+            {
+                if (!_songFiles.Contains(path))
+                {
+                    AddSongsToLists(path);
+                }
+            }
+            return directory;
         }
 
         private void AddSongsToLists(string song)
@@ -152,14 +164,14 @@ namespace NAudio_Spotify_Local
                 {
                     _waveOutDevice.Pause();
                     btPlay.Image = Properties.Resources.Play;
-                    Pic_effects.Visible = false;
+                    Effects.Visible = false;
                     return;
                 }
                 else if (_waveOutDevice.PlaybackState == PlaybackState.Paused)
                 {
                     _waveOutDevice.Play();
                     btPlay.Image = Properties.Resources.Pause;
-                    Pic_effects.Visible = true;
+                    Effects.Visible = true;
                     return;
                 }
 
@@ -222,16 +234,15 @@ namespace NAudio_Spotify_Local
             
             //Set artwork
             TagLib.IPicture pic;
-            MemoryStream stream;
-            Bitmap image;
+            //MemoryStream stream;
+            //Bitmap image;
 
             if (file.Tag.Pictures.Length > 0)
             {
                 pic = file.Tag.Pictures[0];
 
-                stream = new MemoryStream(pic.Data.Data);
-                image = new Bitmap(stream);
-                //new Bitmap(stream);
+                MemoryStream stream = new MemoryStream(pic.Data.Data);
+                Bitmap image = new Bitmap(stream);
 
                 thumbnail.Image = image;
                 thumbnail2.Image = image;
@@ -244,12 +255,14 @@ namespace NAudio_Spotify_Local
             }
 
 
-            if (l_Song_1.Text == "" || l_Artist_1.Text == "" || l_Song_2.Text == "" || l_Album.Text == "")
+            if (l_Song_1.Text == "" || l_Artist_1.Text == "" || l_Song_2.Text == "" || l_Album.Text == "" || l_Album2.Text == "" || l_Song2.Text == "")
             {
                 l_Album.Text = "Desconocido";
                 l_Artist_1.Text = "Desconocido";
                 l_Song_2.Text = "Desconocido";
                 l_Song_1.Text = "Desconocido";
+                l_Album2.Text = "Desconocido";
+                l_Song2.Text = "Desconocido";
             }
             //ListSong.Controls.Add(items);
 
@@ -293,19 +306,19 @@ namespace NAudio_Spotify_Local
         {
             if (!_songFiles.Any())
             {
-                Pic_effects.Visible = false;
+                Effects.Visible = false;
             }
             else
             {
-                if (Pic_effects.Visible == false)
+                if (Effects.Visible == false)
                 {
                     btPlay.Image = Properties.Resources.Play;
-                    Pic_effects.Visible = true;
+                    Effects.Visible = true;
                 }
                 else
                 {
                     //btPlay.Image = Properties.Resources.Pause;
-                    Pic_effects.Visible = true;
+                    Effects.Visible = true;
                 }
 
                 int index = ListSong.IndexFromPoint(e.Location);
@@ -447,9 +460,9 @@ namespace NAudio_Spotify_Local
 
                 if (_waveOutDevice.PlaybackState == PlaybackState.Stopped || _waveOutDevice.PlaybackState == PlaybackState.Paused)
                 {
-                    if (Pic_effects.Visible == true)
+                    if (Effects.Visible == true)
                     {
-                        Pic_effects.Visible = false;
+                        Effects.Visible = false;
                     }
                 }
 
@@ -524,19 +537,17 @@ namespace NAudio_Spotify_Local
             }
         }
 
-        private void txtSeach_TextChanged(object sender, EventArgs e)
+        private void Principal_Load(object sender, EventArgs e)
         {
-            //var registrationsList = ListSong.Items.Cast<String>().ToList();
-            //ListSong.BeginUpdate();
-            //ListSong.Items.Clear();
-            //foreach (string str in registrationsList)
-            //{
-            //    if (str.Contains(txtSeach.Text))
-            //    {
-            //        ListSong.Items.Add(str);
-            //    }
-            //}
-            //ListSong.EndUpdate();
+            MemoryManager.MemoryManager.ReleaseMemory();
+            //Cambios();
+        }
+
+        private void Cambios()
+        {
+            panel1.BackColor = Properties.Settings.Default.MyColor;
+            this.BackColor = Properties.Settings.Default.MyColor;
+            panel2.BackColor = Properties.Settings.Default.MyColor;
         }
     }
 }
