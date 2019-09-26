@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
-using NAudio.Wave;
-using Bunifu.Framework.UI;
+
 
 namespace NAudio_Spotify_Local.Classes
 {
-    public class AudioPlayer
+    [Serializable]
+    public class Datos
     {
-        
+        public string Path_Local { get; set; }
     }
 }

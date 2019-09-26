@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
@@ -21,6 +23,7 @@ namespace NAudio_Spotify_Local
             InitializeComponent();
         }
 
+        private Classes.Datos datos = new Classes.Datos();
         private Play_Items items = new Play_Items();
 
 
@@ -32,10 +35,14 @@ namespace NAudio_Spotify_Local
         private int _songIndex;
         private Action<float> _setVolumeDelegate;
         private string _lastPath;
+        private string _directory;
+        private const string Name_File = "datos.dat";
+        FileStream file;
+        BinaryFormatter formatter;
         //private const string _supportedExtentions = "*.wav;*.aiff;*.mp3;*.aac";
 
 
-        //Cosas
+
         private void btExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -103,29 +110,34 @@ namespace NAudio_Spotify_Local
             {
                 if (folderBrowser.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
                 {
-                    var path = folderBrowser.SelectedPath;
+                    datos.Path_Local = folderBrowser.SelectedPath;
 
-                    //Properties.Settings.Default["Path_Local"] = path;
-                    //Properties.Settings.Default.Save();
-                    
+                    Serializar();
 
-                    LocalDirectory(path);
+                    LocalDirectory(datos.Path_Local, sender,e);
                 }
             }
         }
 
-        private string LocalDirectory(string directory)
+        private void LocalDirectory(string directory, object sender, EventArgs e)
         {
-            string[] paths = Directory.GetFiles(directory, "*.mp3", SearchOption.AllDirectories);
-
-            foreach (string path in paths)
+            try
             {
-                if (!_songFiles.Contains(path))
+                var paths = Directory.GetFiles(directory, "*.mp3", SearchOption.AllDirectories);
+
+                foreach (string path in paths)
                 {
-                    AddSongsToLists(path);
+                    if (!_songFiles.Contains(path))
+                    {
+                        AddSongsToLists(path);
+                    }
                 }
             }
-            return directory;
+            catch (ArgumentNullException ex)
+            {
+                ex.ToString();
+                //btLocal_Click(sender, e);
+            }
         }
 
         private void AddSongsToLists(string song)
@@ -180,7 +192,6 @@ namespace NAudio_Spotify_Local
                 PlaySong(_songIndex);
             }
         }
-        //Cosas
 
         private void PlaySong(int songIndex)
         {
@@ -539,10 +550,42 @@ namespace NAudio_Spotify_Local
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            Deserializar();
+
             MemoryManager.MemoryManager.ReleaseMemory();
-            //Cambios();
+
+            if (!_songFiles.Any())
+            {
+                LocalDirectory(datos.Path_Local, sender,e);
+            }
         }
 
+        private void Serializar()
+        {
+            if (!File.Exists(Name_File))
+            {
+                //File.Delete(Name_File);
+                file = new FileStream(Name_File, FileMode.Create);
+                formatter = new BinaryFormatter();
+
+                formatter.Serialize(file, datos);
+
+                file.Close();
+            }
+        }
+
+        private void Deserializar()
+        {
+            if (File.Exists(Name_File))
+            {
+                file = new FileStream(Name_File, FileMode.Open);
+                formatter = new BinaryFormatter();
+
+                datos = (Classes.Datos)formatter.Deserialize(file);
+                file.Close();
+            }
+        }
+        
         private void Cambios()
         {
             panel1.BackColor = Properties.Settings.Default.MyColor;
