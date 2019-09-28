@@ -15,7 +15,7 @@ La habilidad de poder escuchar y descargar Música y Vídeos
 ### Requisitos
 - Windows 7 o posterior (Creo 😂)
 - .NET Framework 4.6.1 o posterior
--  **NOTA: Esto es un PRE-ALPHA version por o que pueden ocurrir errores y errores, y las caracteristicas incluidas no son definitiva!👌
+-  **NOTA: Esto es un PRE-ALPHA version por o que pueden ocurrir errores y errores, y las caracteristicas incluidas no son definitiva!👌**
 
 ### Captura de Pantalla
 <details>
